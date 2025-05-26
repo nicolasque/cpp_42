@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 16:28:36 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/26 16:42:17 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/26 16:45:01 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ int main(int argc, char **argv)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n" << std::endl;
 		return (1);
 	}
-	for (int i = 0; i < argc; i++)
+	std::cout << std::endl;
+	for (int i = 1; i < argc; i++)
 	{
-		std::cout << argv[i] << std::endl;
-		
+		std::cout << argv[i];
+		std::cout << " ";
+
 	}
 }
