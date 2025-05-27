@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_fields_helper.cpp                              :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 22:09:58 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/27 22:11:21 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/05/27 19:24:44 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/05/27 22:25:04 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.class.hpp"
+#include "../includes/PhoneBook.hpp"
 
-std::string ft_get_field(std::string field_name)
+int main()
 {
-	
+	Contact prueba;
+
+	return(0);
 }

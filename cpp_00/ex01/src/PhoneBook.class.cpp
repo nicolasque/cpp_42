@@ -1,20 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 19:24:44 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/27 19:47:49 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/05/27 19:24:10 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/05/27 22:25:06 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.class.hpp"
-
-int main()
-{
-	Contact prueba;
-
-	return(0);
-}
+#include "../includes/PhoneBook.hpp"

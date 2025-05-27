@@ -6,20 +6,14 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 18:51:55 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/27 22:08:15 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/27 22:24:11 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_CLASS_HPP
 #define CONTACT_CLASS_HPP
 
-#include <string>
-#include <iostream>
-#include <string>
-#include <iomanip>
-#include <cctype>
-#include <sstream>
-
+#include "libraries.hpp"
 class Contact
 {
 private:

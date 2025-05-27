@@ -5,28 +5,25 @@
 NAME        = phonebook
 CC          = c++
 CFLAGS      = -Wall -Wextra -Werror -std=c++98
+INCLUDES    = -I includes
 
-MAIN_SRCS = main.cpp Contact.class.cpp PhoneBook.class.cpp
+SRC_DIR     = src
+MAIN_SRCS   = main.cpp Contact.class.cpp PhoneBook.class.cpp get_fields_helper.cpp
 
-# Unir todas las fuentes
-SRCS = \
-	$(MAIN_SRCS)
+SRCS = $(addprefix $(SRC_DIR)/, $(MAIN_SRCS))
 
-# Create object directories
 OBJ_DIR = obj
-OBJS = $(SRCS:%.c=$(OBJ_DIR)/%.o)
+OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-# Create necessary directories
 DIRS = $(OBJ_DIR)
 
-# Regla principal para compilar
 all: $(DIRS) $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) -o $(NAME)
 
-$(OBJ_DIR)/%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(DIRS):
 	mkdir -p $@
