@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 22:09:58 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/27 22:28:10 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/27 22:34:46 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ std::string ft_get_field(std::string field_name)
 		if (std::cin.fail() || std::cin.eof())
 		{
 			std::cin.clear();
-			freopen("/dev/tty", "r", stdin);
+			std::freopen("/dev/tty", "r", stdin);
 		}
 		std::cout << std::endl;
 	} while (field.empty());

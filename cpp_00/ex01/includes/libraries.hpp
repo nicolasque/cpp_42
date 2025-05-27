@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 22:21:24 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/27 22:23:20 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/27 22:34:24 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@
 #include <iomanip>
 #include <cctype>
 #include <sstream>
+#include <cstdio>
+
 
 #endif //LIBRARIES_HPP

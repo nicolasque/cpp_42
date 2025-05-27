@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 18:51:55 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/27 22:24:11 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/27 22:39:14 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
 	Contact(Contact const &src);
 	Contact &operator=(Contact const &rhs);
 	~Contact();
+	void ft_print_all();
 };
 
 
