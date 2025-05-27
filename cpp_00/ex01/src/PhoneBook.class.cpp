@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 19:24:10 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/28 00:32:07 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 00:55:19 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ PhoneBook::PhoneBook()
 {
 	this->contact_count = 0;
 	this->contact_range = 0;
+	for (int i = 0; i < MAX_CONTACT; i++)
+		*this->book = nullptr;
+
 }
 
 PhoneBook::~PhoneBook()
@@ -26,10 +29,12 @@ PhoneBook::~PhoneBook()
 void PhoneBook::ft_add_contact()
 {
 	Contact new_contact;
+
+	std::cout << "=================================\n Adding new contact: " << std::endl;
 	if (this->contact_count < 8)
 	{
 		new_contact.ft_add_index(contact_count);
-		this->book[this->contact_count] = new_contact;
+		this->book[this->contact_count] = &new_contact;
 		this->contact_range ++;
 	}
 	if (contact_range == 8)

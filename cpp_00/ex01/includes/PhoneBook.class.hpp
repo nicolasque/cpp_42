@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 18:51:58 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/28 00:29:49 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 00:46:44 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class PhoneBook
 private:
 	int contact_count;
 	int contact_range;
-	Contact book[MAX_CONTACT];
+	Contact* book[MAX_CONTACT];
 
 	public:
 	PhoneBook();
