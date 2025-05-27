@@ -6,13 +6,13 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 22:09:58 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/27 23:03:12 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/27 23:04:21 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PhoneBook.hpp"
 
-std::string ft_get_field(std::string field_name)
+std::string ft_getline(std::string field_name)
 {
 	std::string field;
 
