@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   phonebook.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 16:28:36 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/27 18:48:21 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/05/27 22:11:44 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/05/27 22:12:03 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CONTACT_CLASS_HPP
+#define CONTACT_CLASS_HPP
+
+#include <string>
 #include <iostream>
 #include <string>
 #include <iomanip>
 #include <cctype>
+#include <sstream>
 
-int main(int argc, char **argv)
-{
-	char c;
-
-	if (argc <= 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-		std::cout << std::endl;
-		return (1);
-	}
-	for (int i = 1; i < argc; i++)
-	{
-		for (int j = 0; argv[i][j] != '\0'; j++)
-		{
-			c = std::toupper(argv[i][j]);
-			std::cout << c;
-		}
-		std::cout << " ";
-	}
-	std::cout << std::endl;
-}
+#endif //CONTACT_CLASS_HPP
