@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 22:09:58 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/27 22:34:46 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/27 23:03:12 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,26 @@ std::string ft_get_field(std::string field_name)
 		{
 			std::cin.clear();
 			std::freopen("/dev/tty", "r", stdin);
+			std::cout << std::endl;
 		}
-		std::cout << std::endl;
 	} while (field.empty());
 	return field;
+}
+
+bool ft_check_phone_nbr(std::string str)
+{
+	if (str.length() < 9)
+	{
+		std::cout << "\033[31mInvalid phone number (Number to short)\033[0m" << std::endl;
+		return (false);
+	}
+	for (size_t i = 0; i < str.length(); i++)
+	{
+		if (std::isdigit(str[i]) == 0)
+		{
+            std::cout << "\033[31mInvalid phone number (Only accepts numbers)\033[0m" << std::endl;
+			return (false);
+		}
+	}
+	return (true);
 }

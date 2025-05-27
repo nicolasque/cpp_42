@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 19:23:18 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/27 22:40:44 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/27 22:58:19 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ Contact::Contact()
 	this->_first_name = ft_get_field("First name: ");
 	this->_second_name = ft_get_field("Second name: ");
 	this->_nickname = ft_get_field("Nickname: ");
-	this->_phone_number = ft_get_field("Phone number: ");
+	do
+	{
+		this->_phone_number = ft_get_field("Phone number: ");
+	} while (!ft_check_phone_nbr(this->_phone_number));
+
 	this->_darkest_secret = ft_get_field("Darkest secret: ");
 
 }
