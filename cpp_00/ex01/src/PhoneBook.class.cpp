@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 19:24:10 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/28 01:36:45 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 01:45:34 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,15 @@ PhoneBook::PhoneBook()
 {
 	this->contact_count = 0;
 	this->contact_range = 0;
+	for (int i = 0; i < MAX_CONTACT; i++)
+		this->book[i] = NULL;
 }
 
 PhoneBook::~PhoneBook()
 {
 	std::cout << "PhoneBook destuctor called" << std::endl;
+	for (int i = 0; this->book[i]; i++)
+		delete(this->book[i]);
 }
 
 void PhoneBook::ft_add_contact()
@@ -30,8 +34,10 @@ void PhoneBook::ft_add_contact()
 	std::cout << "=================================\n Adding new contact: " << std::endl;
 	if (this->contact_count < 8)
 	{
+		if (this->book[this->contact_range] != NULL)
+			delete(this->book[this->contact_range]);
 		new_contact->ft_add_index(contact_count);
-		this->book[this->contact_count] = new_contact;
+		this->book[this->contact_range] = new_contact;
 		this->contact_range++;
 	}
 	if (contact_range >= 8)
@@ -50,7 +56,7 @@ void PhoneBook::ft_print_all_contacts()
 	for (int i = 0; i < this->contact_range; i++)
 	{
 		std::cout << "=====================" << std::endl;
-		this->book[i]->ft_print_contact();
+		this->book[i]->ft_print_all_info(); //Esto me vale para imprimir cuadno busque el contacto
 		std::cout << "=====================" << std::endl;
 	}
 

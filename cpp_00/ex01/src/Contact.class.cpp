@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 19:23:18 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/28 00:58:47 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 01:47:28 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ Contact::~Contact()
 	std::cout << "Contact destructor called" << std::endl;
 }
 
-void Contact::ft_print_contact()
+void Contact::ft_print_all_info()
 {
+	std::cout << "Index" << this->_index << std::endl;
 	std::cout << "Name: " << this->_first_name << std::endl;
 	std::cout << "Second name: " << this->_second_name << std::endl;
 	std::cout << "Nikname: " << this->_nickname << std::endl;
@@ -42,4 +43,9 @@ void Contact::ft_print_contact()
 void Contact::ft_add_index(int index)
 {
 	this->_index = index;
+}
+
+void Contact::ft_print_formated()
+{
+	//TODO AÑADIR LA INFORMACION FORMATEADA SEGUN SUBJECT
 }
