@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 19:23:18 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/28 00:28:44 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 00:58:47 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Contact::~Contact()
 	std::cout << "Contact destructor called" << std::endl;
 }
 
-void Contact::ft_print_all()
+void Contact::ft_print_contact()
 {
 	std::cout << "Name: " << this->_first_name << std::endl;
 	std::cout << "Second name: " << this->_second_name << std::endl;

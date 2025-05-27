@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 18:51:58 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/28 00:46:44 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 00:59:45 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ private:
 	PhoneBook();
 	~PhoneBook();
 	void ft_add_contact();
+	void ft_print_all_contacts();
 };
 
 #endif // PHONE_BOOK_CLASS_HPP
