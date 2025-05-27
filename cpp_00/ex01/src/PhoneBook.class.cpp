@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 19:24:10 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/28 01:13:49 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 01:36:45 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,16 @@ void PhoneBook::ft_add_contact()
 
 void PhoneBook::ft_print_all_contacts()
 {
-	std::cout << "=====================" << std::endl;
 	if (this->contact_range < 1)
 	{
-		std::cout << "There are no contacts, use ADD to add contact." << std::endl;
+		std::cout << YELLOW << "There are no contacts, use ADD to add contact." << RESET << std::endl;
 		return ;
 	}
 	for (int i = 0; i < this->contact_range; i++)
 	{
+		std::cout << "=====================" << std::endl;
 		this->book[i]->ft_print_contact();
+		std::cout << "=====================" << std::endl;
 	}
-	std::cout << "=====================" << std::endl;
 
 }

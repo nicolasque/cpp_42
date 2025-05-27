@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 22:11:44 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/28 00:18:18 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 01:35:49 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "libraries.hpp"
 #include "Contact.class.hpp"
 #include "PhoneBook.class.hpp"
+#include "Colors.hpp"
 
 // HELPER
 std::string ft_getline(std::string field_name);
