@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 18:51:55 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/27 22:39:14 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 00:41:30 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ private:
 	std::string _nickname;
 	std::string _darkest_secret;
 	std::string _phone_number;
+	int 		_index;
 
 public:
 	Contact();
 	Contact(Contact const &src);
-	Contact &operator=(Contact const &rhs);
 	~Contact();
 	void ft_print_all();
+	void ft_add_index(int index);
 };
 
-
-#endif //CONTACT_CLASS_HPP
+#endif // CONTACT_CLASS_HPP

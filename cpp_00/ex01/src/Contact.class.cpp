@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 19:23:18 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/27 23:05:19 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 00:28:44 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Contact::Contact()
 
 Contact::~Contact()
 {
-	std::cout << "destructor called" << std::endl;
+	std::cout << "Contact destructor called" << std::endl;
 }
 
 void Contact::ft_print_all()
@@ -37,4 +37,9 @@ void Contact::ft_print_all()
 	std::cout << "Nikname: " << this->_nickname << std::endl;
 	std::cout << "Phone mumber: " << this->_phone_number << std::endl;
 	std::cout << "Bigest secret: " << this->_darkest_secret << std::endl;
+}
+
+void Contact::ft_add_index(int index)
+{
+	this->_index = index;
 }

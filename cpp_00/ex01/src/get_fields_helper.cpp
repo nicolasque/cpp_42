@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 22:09:58 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/27 23:04:21 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 00:43:32 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ std::string ft_getline(std::string field_name)
 
 bool ft_check_phone_nbr(std::string str)
 {
-	if (str.length() < 9)
+	if (str.length() != 9)
 	{
-		std::cout << "\033[31mInvalid phone number (Number to short)\033[0m" << std::endl;
+		std::cout << "\033[31mInvalid phone number (Number to short or to long)\033[0m" << std::endl;
 		return (false);
 	}
 	for (size_t i = 0; i < str.length(); i++)
