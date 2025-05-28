@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 18:51:58 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/28 17:28:43 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 18:19:32 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 #include "libraries.hpp"
 #include "PhoneBook.class.hpp"
 
-#define MAX_CONTACT 8
+#define MAX_CONTACT 2
 class PhoneBook
 {
 private:
 	int contact_count;
 	int contact_range;
 	Contact* book[MAX_CONTACT];
-	Contact *ft_check_index(int index);
+	Contact *ft_check_index(int index) const;
 
 	public:
 	PhoneBook();

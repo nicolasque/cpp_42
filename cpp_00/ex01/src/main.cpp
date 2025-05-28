@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 19:24:44 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/28 16:57:04 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 18:27:00 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 			phoneBook.ft_add_contact();
 		else if (!input.compare("SEARCH"))
 			phoneBook.ft_search();
-		else
+		else if (input.compare("EXIT"))
 			std::cout << "\033[31mInvalid input 'ADD | SEARCH | EXIT' only.\033[0m" << std::endl;
 	}
 

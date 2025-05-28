@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 19:24:10 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/28 17:29:00 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 18:24:43 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ PhoneBook::PhoneBook()
 PhoneBook::~PhoneBook()
 {
 	std::cout << "PhoneBook destuctor called" << std::endl;
-	for (int i = 0; this->book[i]; i++)
+	for (int i = 0; this->book[i] && i < MAX_CONTACT; i++)
 		delete(this->book[i]);
 }
 
@@ -31,8 +31,7 @@ void PhoneBook::ft_add_contact()
 {
 	Contact *new_contact = new Contact();
 
-	std::cout << "=================================\n Adding new contact: " << std::endl;
-	if (this->contact_count < 8)
+	if (this->contact_range < MAX_CONTACT)
 	{
 		if (this->book[this->contact_range] != NULL)
 			delete(this->book[this->contact_range]);
@@ -40,43 +39,43 @@ void PhoneBook::ft_add_contact()
 		this->book[this->contact_range] = new_contact;
 		this->contact_range++;
 	}
-	if (contact_range >= 8)
+	if (contact_range >= MAX_CONTACT)
 		contact_range = 0;
 	contact_count++;
 }
 
 void PhoneBook::ft_print_all_contacts() const
 {
-	if (this->contact_range < 1)
+	if (this->contact_count < 1)
 	{
 		std::cout << YELLOW << "There are no contacts, use ADD to add contact." << RESET << std::endl;
 		return ;
 	}
-	for (int i = 0; i < this->contact_range; i++)
-	{
-		// this->book[i]->ft_print_all_info(); //Esto me vale para imprimir cuadno busque el contacto
+	for (int i = 0; this->book[i] && i < MAX_CONTACT; i++)
 		this->book[i]->ft_print_formated();
-	}
 }
 
-Contact *PhoneBook::ft_check_index(int index)
+Contact *PhoneBook::ft_check_index(int index) const
 {
-	for (int i; this->book[i] != nullptr; i++)
+	for (int i = 0; this->book[i] && i < MAX_CONTACT; i++)
 	{
 		if (this->book[i]->ft_get_index() == index)
 			return (this->book[i]);
 	}
+	return (NULL);
 }
 
 void PhoneBook::ft_search() const
 {
 	int chosed_index;
-	ft_print_all_contacts();
+	Contact *printed_contact;
 
+	ft_print_all_contacts();
 	do
 	{
 		std::stringstream  ss(ft_getline("Chose the index of a user to se the all user data: "));
 		ss >> chosed_index;
-
-	} while (chosed_index);
+		printed_contact = ft_check_index(chosed_index);
+	} while (printed_contact == NULL);
+	printed_contact->ft_print_all_info();
 }
