@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 18:51:58 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/28 18:19:32 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 18:27:33 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "libraries.hpp"
 #include "PhoneBook.class.hpp"
 
-#define MAX_CONTACT 2
+#define MAX_CONTACT 8
 class PhoneBook
 {
 private:
