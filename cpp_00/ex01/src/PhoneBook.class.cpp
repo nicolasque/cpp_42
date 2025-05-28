@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 19:24:10 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/28 01:45:34 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/28 17:29:00 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,7 @@ void PhoneBook::ft_add_contact()
 	contact_count++;
 }
 
-
-void PhoneBook::ft_print_all_contacts()
+void PhoneBook::ft_print_all_contacts() const
 {
 	if (this->contact_range < 1)
 	{
@@ -55,9 +54,29 @@ void PhoneBook::ft_print_all_contacts()
 	}
 	for (int i = 0; i < this->contact_range; i++)
 	{
-		std::cout << "=====================" << std::endl;
-		this->book[i]->ft_print_all_info(); //Esto me vale para imprimir cuadno busque el contacto
-		std::cout << "=====================" << std::endl;
+		// this->book[i]->ft_print_all_info(); //Esto me vale para imprimir cuadno busque el contacto
+		this->book[i]->ft_print_formated();
 	}
+}
 
+Contact *PhoneBook::ft_check_index(int index)
+{
+	for (int i; this->book[i] != nullptr; i++)
+	{
+		if (this->book[i]->ft_get_index() == index)
+			return (this->book[i]);
+	}
+}
+
+void PhoneBook::ft_search() const
+{
+	int chosed_index;
+	ft_print_all_contacts();
+
+	do
+	{
+		std::stringstream  ss(ft_getline("Chose the index of a user to se the all user data: "));
+		ss >> chosed_index;
+
+	} while (chosed_index);
 }
