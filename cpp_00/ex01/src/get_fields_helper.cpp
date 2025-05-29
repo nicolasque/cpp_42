@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 22:09:58 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/28 17:06:00 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/29 23:25:32 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@ std::string ft_getline(std::string field_name)
 			std::cin.clear();
 			std::freopen("/dev/tty", "r", stdin);
 			std::cout << std::endl;
+		}
+		for (size_t i = 0; i < field.length(); i++)
+		{
+            if (static_cast<unsigned char>(field[i]) > 127)
+			{
+				std::cout << YELLOW << "Invalid character (DOG)" << RESET << std::endl;
+				field = "";
+			}
 		}
 	} while (field.empty());
 	return field;
