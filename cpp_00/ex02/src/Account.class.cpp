@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 00:51:15 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/29 19:42:05 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/29 19:59:26 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <iostream>
 #include <ctime>
 #include <iomanip>
-#include "Colors.hpp"
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -51,8 +50,8 @@ Account::Account(int initial_deposit)
 	_totalAmount += initial_deposit;
 	_displayTimestamp();
 	std::cout << \
-			"index:" << BLUE <<_accountIndex << RESET \
-			<< ";amount:" << BLUE << initial_deposit << RESET \
+			"index:"  <<_accountIndex  \
+			<< ";amount:" <<  initial_deposit  \
 			<<";created" << std::endl;
 }
 
@@ -60,9 +59,9 @@ Account::~Account()
 {
 	_displayTimestamp();
 	std::cout << \
-			"index:" << BLUE <<_accountIndex << RESET \
-			<< ";amount:" << BLUE << this->_amount << RESET \
-			<<";closed" << std::endl;
+			"index:"  <<_accountIndex <<  \
+			";amount:"  << this->_amount <<  \
+			";closed" << std::endl;
 }
 
 int Account::getNbAccounts()
@@ -89,21 +88,21 @@ void Account::displayAccountsInfos()
 {
 	_displayTimestamp();
 	std::cout <<
-	"acounts:" << BLUE << _nbAccounts << RESET \
-	";total:" << BLUE << _totalAmount << RESET \
-	";deposits:" << BLUE << _totalNbDeposits << RESET \
-	";withdrawals:" << BLUE << _totalNbWithdrawals << RESET << std::endl;
+	"accounts:"  << _nbAccounts <<  \
+	";total:"  << _totalAmount <<  \
+	";deposits:"  << _totalNbDeposits <<  \
+	";withdrawals:"  << _totalNbWithdrawals << std::endl;
 }
 
 void	Account::displayStatus( void ) const
 {
 	_displayTimestamp();
 	std::cout <<
-	"index:" << BLUE <<_accountIndex << RESET \
-	<< ";amount:" << BLUE << _amount << RESET \
-	<< ";deposits:" << BLUE << _nbDeposits << RESET \
-	<< ";withdrawals:" << BLUE << _nbWithdrawals << RESET \
-	<< std::endl;
+	"index:"  <<_accountIndex <<  \
+	";amount:"  << _amount <<  \
+	";deposits:"  << _nbDeposits <<  \
+	";withdrawals:"  << _nbWithdrawals <<  \
+	std::endl;
 }
 
 void	Account::makeDeposit( int deposit )
@@ -115,22 +114,23 @@ void	Account::makeDeposit( int deposit )
 	if (deposit < 0)
 	{
 		std::cout <<
-		"index:" << BLUE <<_accountIndex << RESET \
-		<< ";p_amount:" << BLUE << p_amount << RESET \
-		<< ";deposit:refused"
-		<< std::endl;
+		"index:"  <<_accountIndex <<  \
+		";p_amount:"  << p_amount <<  \
+		";deposit:refused" <<
+		std::endl;
 		return ;
 	}
 	this->_amount += deposit;
 	this->_nbDeposits ++;
+	_totalAmount += deposit;
 	_totalNbDeposits ++;
 	std::cout <<
-	"index:" << BLUE <<_accountIndex << RESET \
-	<< ";p_amount:" << BLUE << p_amount << RESET \
-	<< ";deposit:" << BLUE << deposit << RESET \
-	<< ";amount:" << BLUE << _amount << RESET \
-	<< ";nb_deposits:" << BLUE << _nbDeposits << RESET \
-	<< std::endl;
+	"index:"  <<_accountIndex <<  \
+	";p_amount:"  << p_amount <<  \
+	";deposit:"  << deposit <<  \
+	";amount:"  << _amount <<  \
+	";nb_deposits:"  << _nbDeposits <<  \
+	std::endl;
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
@@ -142,21 +142,22 @@ bool	Account::makeWithdrawal( int withdrawal )
 	if (withdrawal > this->_amount || withdrawal < 0)
 	{
 		std::cout <<
-		"index:" << BLUE <<_accountIndex << RESET \
-		<< ";p_amount:" << BLUE << p_amount << RESET \
-		<< ";withdrawal:refused"
-		<< std::endl;
+		"index:"  <<_accountIndex <<  \
+		";p_amount:"  << p_amount <<  \
+		";withdrawal:refused" << \
+		std::endl;
 		return (false);
 	}
 	this->_amount -= withdrawal;
 	this->_nbWithdrawals ++;
-	_totalNbDeposits ++;
+	_totalAmount -= withdrawal;
+	_totalNbWithdrawals ++;
 	std::cout <<
-	"index:" << BLUE <<_accountIndex << RESET \
-	<< ";p_amount:" << BLUE << p_amount << RESET \
-	<< ";withdrawal:" << BLUE << withdrawal << RESET \
-	<< ";amount:" << BLUE << _amount << RESET \
-	<< ";nb_withdrawals:" << BLUE << _nbDeposits << RESET \
-	<< std::endl;
+	"index:"  <<_accountIndex <<  \
+	";p_amount:"  << p_amount <<  \
+	";withdrawal:"  << withdrawal <<  \
+	";amount:"  << _amount <<  \
+	";nb_withdrawals:"  << _nbDeposits <<  \
+	std::endl;
 	return (true);
 }

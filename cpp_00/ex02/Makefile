@@ -4,7 +4,7 @@
 
 NAME        = ex02
 CC          = c++
-CFLAGS      = #-Wall -Wextra -Werror -std=c++98
+CFLAGS      = -Wall -Wextra -Werror -std=c++98
 INCLUDES    = -I includes
 
 SRC_DIR     = src

@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 19:24:10 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/28 18:24:43 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/05/29 19:48:04 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void PhoneBook::ft_print_all_contacts() const
 {
 	if (this->contact_count < 1)
 	{
-		std::cout << YELLOW << "There are no contacts, use ADD to add contact." << RESET << std::endl;
+		std::cout << YELLOW << "There are no contacts, use ADD to add contact."  << std::endl;
 		return ;
 	}
 	for (int i = 0; this->book[i] && i < MAX_CONTACT; i++)
