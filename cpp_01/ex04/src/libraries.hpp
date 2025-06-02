@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   libraries.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 14:23:14 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/02 14:35:13 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/05/27 22:21:24 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/05/28 17:03:39 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.class.hpp"
-#include "HumanB.class.hpp"
+#ifndef LIBRARIES_HPP
+#define LIBRARIES_HPP
 
-int main()
-{
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	return 0;
-}
+
+#include <string>
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <cctype>
+#include <sstream>
+#include <cstdio>
+#include <cstdlib>
+
+#endif //LIBRARIES_HPP

@@ -2,7 +2,7 @@
 #                                   Makefile                                   #
 # **************************************************************************** #
 
-NAME        = ex02
+NAME        = Sed_is_for_losers
 CC          = c++
 CFLAGS      = -Wall -Wextra -Werror -std=c++98
 INCLUDES    = -I includes
