@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:23:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/30 14:42:29 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/02 13:21:47 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Weapon::Weapon(std::string type)
 
 Weapon::~Weapon()
 {
-	
+	std::cout << BOLD_CYAN << "Weapon: " << this->getType() << " destructor was called" << RESET << std::endl;
 }
 
 const std::string& Weapon::getType()

@@ -6,10 +6,11 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:23:19 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/02 12:54:58 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/02 13:58:33 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <string>
 #include <iostream>
 #include <iomanip>
@@ -35,13 +36,13 @@
 
 class Weapon
 {
-	private:
-		std::string _type;
+private:
+	std::string _type;
 
-	public:
-		Weapon();
-		Weapon(std::string type);
-		~Weapon();
-		const std::string &getType();
-		void setType(std::string type);
+public:
+	Weapon();
+	Weapon(std::string type);
+	~Weapon();
+	const std::string &getType();
+	void setType(std::string type);
 };
