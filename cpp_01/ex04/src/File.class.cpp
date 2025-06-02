@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:14:37 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/02 20:24:51 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/02 21:13:43 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void File::setContent()
 	this->content = "";
 	while (ReadFile.get(c))
 	{
-		
+		this->content += c;
 	}
 }
 
@@ -56,8 +56,14 @@ size_t File::replace(size_t pos)
 
 void File::writeNewFile()
 {
-	std::string outfile;
-    outfile = this->_file_name + ".replace";
+	std::string outfile_name;
 
-	
+    outfile_name = this->_file_name + ".replace";
+	std::ofstream outfile(outfile_name.c_str());
+	if (!outfile)
+	{
+		std::cout << "Error writing to file" << std::endl;
+		exit(EXIT_FAILURE);
+	}
+	outfile << this->content;
 }
