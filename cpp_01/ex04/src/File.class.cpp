@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:14:37 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/02 21:24:14 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/03 00:35:39 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ void File::setContent()
 	char c;
 	this->content = "";
 	while (ReadFile.get(c))
-	{
 		this->content += c;
-	}
 }
 
 std::string File::getContent()

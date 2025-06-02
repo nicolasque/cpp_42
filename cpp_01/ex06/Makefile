@@ -2,13 +2,13 @@
 #                                   Makefile                                   #
 # **************************************************************************** #
 
-NAME        = ex02
+NAME        = harlFilter
 CC          = c++
 CFLAGS      = -Wall -Wextra -Werror -std=c++98
 INCLUDES    = -I includes
 
 SRC_DIR     = src
-MAIN_SRCS   = tests.cpp Account.class.cpp
+MAIN_SRCS   = main.cpp Harl.cpp
 
 SRCS = $(addprefix $(SRC_DIR)/, $(MAIN_SRCS))
 
