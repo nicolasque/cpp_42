@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:23:07 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/30 14:44:05 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/02 13:15:11 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 class HumanA
 {
 	private:
-		std::string _name;
-		Weapon& _weapon;
+		const std::string _name;
+		Weapon* _weapon;
 
 	public:
-		HumanA();
+		HumanA(std::string name, Weapon& weapon_type);
 		~HumanA();
+		void attack();
 };
