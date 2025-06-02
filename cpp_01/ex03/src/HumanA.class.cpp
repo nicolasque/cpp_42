@@ -6,13 +6,13 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:23:04 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/02 13:15:25 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/02 14:05:45 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.class.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon) : _name(name) , _weapon(&weapon)
+HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(&weapon)
 {
 	std::cout << "HumanA constructor has been called: " << std::endl
 			  << "name: " << BOLD_BLUE << name << RESET << std::endl
