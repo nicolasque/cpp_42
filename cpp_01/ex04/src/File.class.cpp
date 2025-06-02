@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:14:37 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/02 21:13:43 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/02 21:24:14 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 File::File(std::string file_name, std::string s1, std::string s2) : _file_name(file_name), _s1(s1), _s2(s2)
 {
-	std::cout << "File constructor has been called: " << std::endl
-			<< "File name: " << this->_file_name << std::endl
-			<< "s1: " << this->_s1 << std::endl
-			<< "s2: " << this->_s2 << std::endl
-			<< "==================================================" <<  std::endl;
 
 }
 
