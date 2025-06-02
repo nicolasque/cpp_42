@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:14:24 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/02 19:13:11 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/02 20:17:30 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ class File
 		~File();
 		void setContent();
 		std::string getContent();
-		std::string replace();
+		size_t replace(size_t pos);
+		void writeNewFile();
 };

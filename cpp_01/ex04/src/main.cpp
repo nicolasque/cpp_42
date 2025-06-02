@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 14:23:14 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/02 19:15:30 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/02 20:13:26 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ int main(int argc, char **argv)
 	std::ifstream ReadFile(argv[1]);
 	File file(argv[1], argv[2], argv[3]);
 	file.setContent();
-	std::cout << file.getContent();
+	std::cout << file.getContent() << std::endl;
+	std::cout << "==================================================" <<  std::endl;
+	file.replace(0);
+	std::cout << file.getContent() << std::endl;
 	return 0;
 }

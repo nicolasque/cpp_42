@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:14:37 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/02 19:16:52 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/02 20:24:51 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,34 @@ File::~File()
 void File::setContent()
 {
 	std::ifstream ReadFile(this->_file_name.c_str());
-	while (std::getline(ReadFile, this->content));
+	char c;
+	this->content = "";
+	while (ReadFile.get(c))
+	{
+		
+	}
 }
 
 std::string File::getContent()
 {
 	return (this->content);
+}
+
+size_t File::replace(size_t pos)
+{
+	pos = this->content.find(this->_s1);
+	if (pos == std::string::npos)
+		return (0);
+	this->content.erase(pos, this->_s1.length());
+	this->content.insert(pos, this->_s2);
+	replace(pos);
+	return (pos);
+}
+
+void File::writeNewFile()
+{
+	std::string outfile;
+    outfile = this->_file_name + ".replace";
+
+	
 }
