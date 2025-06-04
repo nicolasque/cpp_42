@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 21:01:23 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/04 12:48:58 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/04 15:34:41 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,20 @@
 #include <sstream>
 #include <cstdio>
 #include <cstdlib>
+#include <cmath>
+
+#define FRACTIONAL_NBR 8
 
 class Fixed
 {
 private:
 	int _number;
-	static const int _fraction = 8;
+	static const int _fraction = FRACTIONAL_NBR;
 
 public:
 	Fixed();
 	Fixed(const int number);
+	Fixed(const float number);
 	Fixed(const Fixed &fixed);
 	Fixed &operator=(const Fixed &fixed);
 	~Fixed();

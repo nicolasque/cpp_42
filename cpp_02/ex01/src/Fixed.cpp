@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 21:01:33 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/04 12:48:52 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/04 13:18:54 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ Fixed::Fixed()
 Fixed::Fixed(const int number)
 {
 	this->setRawBits(number);
+}
+
+Fixed::Fixed(const float fp_number)
+{
+	this->_number = std::roundf(fp_number);
 }
 
 Fixed::Fixed(const Fixed &fixed)

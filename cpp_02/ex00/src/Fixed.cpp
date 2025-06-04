@@ -6,15 +6,14 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 21:01:33 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/04 12:44:55 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/04 13:22:43 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed() : _number(0)
 {
-	this->_number = 0;
 	std::cout << "Default constructor has been called" << std::endl;
 }
 
