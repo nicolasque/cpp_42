@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 21:01:23 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/04 15:34:41 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/04 17:56:41 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@
 #include <cstdlib>
 #include <cmath>
 
-#define FRACTIONAL_NBR 8
+#define FRACTIONAL_BITS 8
+#define MAX_FLO std::pow(2, (32 - FRACTIONAL_BITS)) - 1
 
 class Fixed
 {
 private:
 	int _number;
-	static const int _fraction = FRACTIONAL_NBR;
+	static const int _fraction = FRACTIONAL_BITS;
 
 public:
 	Fixed();
@@ -41,6 +42,10 @@ public:
 	~Fixed();
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
+	float toFloat(void) const;
+	int toInt(void) const;
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& t_Fixed);
 
 #endif // FIXED_HPP

@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 21:01:33 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/04 13:18:54 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/04 17:52:10 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,45 @@
 
 Fixed::Fixed()
 {
-	this->_number = 0;
 	std::cout << "Default constructor has been called" << std::endl;
+	this->_number = 0;
 }
 
-Fixed::Fixed(const int number)
+Fixed::Fixed(const int input)
 {
-	this->setRawBits(number);
+	std::cout << "Int constructor called" << std::endl;
+	if (input >= MAX_FLO)
+	{
+		std::cout << "Input is out of range, fixedPointValue set to 0" << std::endl;
+		this->_number = 0;
+		return;
+	}
+	this->_number = round(input * pow(2, this->_fraction));
 }
 
-Fixed::Fixed(const float fp_number)
+Fixed::Fixed(const float input)
 {
-	this->_number = std::roundf(fp_number);
+	std::cout << "Float constructor called" << std::endl;
+	if (input >= MAX_FLO)
+	{
+		std::cout << "Input is out of range, fixedPointValue set to 0" << std::endl;
+		this->_number = 0;
+		return;
+	}
+	this->_number = round(input * (1 << this->_fraction));
 }
 
 Fixed::Fixed(const Fixed &fixed)
 {
-	this->_number = fixed.getRawBits();
 	std::cout << "Copy constructor has been called" << std::endl;
+	this->_number = fixed.getRawBits();
 }
 
 Fixed &Fixed::operator=(const Fixed &fixed)
 {
-	if (this != &fixed)
-	{
-		this->_number = fixed.getRawBits();
-	}
 	std::cout << "Copy asign operation has been called" << std::endl;
+	if (this != &fixed)
+		this->_number = fixed.getRawBits();
 	return (*this);
 }
 
@@ -58,4 +70,20 @@ int Fixed::getRawBits() const
 void Fixed::setRawBits(int const raw)
 {
 	this->_number = raw;
+}
+
+float Fixed::toFloat() const
+{
+	return ((float)this->_number * (pow(2, -this->_fraction)));
+}
+
+int Fixed::toInt() const
+{
+	return (round(this->_number * (pow(2, -this->_fraction))));
+}
+
+std::ostream &operator<<(std::ostream& os, const Fixed &fixed)
+{
+	os << fixed.toFloat();
+	return (os);
 }
