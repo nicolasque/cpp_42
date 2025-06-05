@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 21:01:23 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/04 17:56:41 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/05 23:45:13 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,39 @@ public:
 	Fixed(const int number);
 	Fixed(const float number);
 	Fixed(const Fixed &fixed);
-	Fixed &operator=(const Fixed &fixed);
+
 	~Fixed();
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 	float toFloat(void) const;
 	int toInt(void) const;
+	
+
+	Fixed &operator=(const Fixed &fixed);
+
+	bool operator>(const Fixed &fixed);
+	bool operator<(const Fixed &fixed);
+	bool operator>=(const Fixed &fixed);
+	bool operator<=(const Fixed &fixed);
+	bool operator==(const Fixed &fixed);
+	bool operator!=(const Fixed &fixed);
+
+	Fixed operator+(const Fixed &fixed);
+	Fixed operator-(const Fixed &fixed);
+	Fixed operator*(const Fixed &fixed);
+	Fixed operator/(const Fixed &fixed);
+
+	Fixed operator++();
+	Fixed operator++(int);
+	Fixed operator--();
+	Fixed operator--(int);
+
+	static Fixed& min(Fixed &fx1, Fixed &fx2);
+	static const Fixed& min(const Fixed &fx1, const Fixed &fx2);
+	static Fixed& max(Fixed &fx1, Fixed &fx2);
+	static const Fixed& max(const Fixed &fx1, const Fixed &fx2);
 };
 
-std::ostream& operator<<(std::ostream& os, const Fixed& t_Fixed);
+std::ostream &operator<<(std::ostream &os, const Fixed &t_Fixed);
 
 #endif // FIXED_HPP

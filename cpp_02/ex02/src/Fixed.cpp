@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 21:01:33 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/05 14:52:15 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/05 23:54:35 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 
 Fixed::Fixed()
 {
-	std::cout << "Default constructor has been called" << std::endl;
 	this->_number = 0;
 }
 
 Fixed::Fixed(const int input)
 {
-	std::cout << "Int constructor called" << std::endl;
 	if (input >= MAX_FLO)
 	{
-		std::cout << "Input is out of range, fixedPointValue set to 0" << std::endl;
 		this->_number = 0;
 		return;
 	}
@@ -32,10 +29,8 @@ Fixed::Fixed(const int input)
 
 Fixed::Fixed(const float input)
 {
-	std::cout << "Float constructor called" << std::endl;
 	if (input >= MAX_FLO)
 	{
-		std::cout << "Input is out of range, fixedPointValue set to 0" << std::endl;
 		this->_number = 0;
 		return;
 	}
@@ -44,13 +39,11 @@ Fixed::Fixed(const float input)
 
 Fixed::Fixed(const Fixed &fixed)
 {
-	std::cout << "Copy constructor has been called" << std::endl;
 	this->_number = fixed.getRawBits();
 }
 
 Fixed &Fixed::operator=(const Fixed &fixed)
 {
-	std::cout << "Copy asign operation has been called" << std::endl;
 	if (this != &fixed)
 		this->_number = fixed.getRawBits();
 	return (*this);
@@ -58,12 +51,10 @@ Fixed &Fixed::operator=(const Fixed &fixed)
 
 Fixed::~Fixed()
 {
-	std::cout << "Fixed destructor has been called" << std::endl;
 }
 
 int Fixed::getRawBits() const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_number);
 }
 
@@ -82,10 +73,119 @@ int Fixed::toInt() const
 	return (round(this->_number * (pow(2, -this->_fraction))));
 }
 
-std::ostream &operator<<(std::ostream& os, const Fixed &fixed)
+std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 {
 	os << fixed.toFloat();
 	return (os);
 }
 
+bool Fixed::operator>(const Fixed &fixed)
+{
+	return (this->_number > fixed._number);
+}
 
+bool Fixed::operator<(const Fixed &fixed)
+{
+	return (this->_number < fixed._number);
+}
+
+bool Fixed::operator>=(const Fixed &fixed)
+{
+	return (this->_number >= fixed._number);
+}
+
+bool Fixed::operator<=(const Fixed &fixed)
+{
+	return (this->_number <= fixed._number);
+}
+
+bool Fixed::operator==(const Fixed &fixed)
+{
+	return (this->_number == fixed._number);
+}
+
+bool Fixed::operator!=(const Fixed &fixed)
+{
+	return (this->_number != fixed._number);
+}
+
+Fixed Fixed::operator+(const Fixed &fixed)
+{
+	Fixed output(this->_number + fixed._number);
+	return (output);
+}
+
+Fixed Fixed::operator-(const Fixed &fixed)
+{
+	Fixed output(this->_number - fixed._number);
+	return (output);
+}
+
+Fixed Fixed::operator*(const Fixed &fixed)
+{
+	Fixed output;
+	output._number = (this->_number * fixed._number) >> _fraction;
+	return (output);
+}
+
+Fixed Fixed::operator/(const Fixed &fixed)
+{
+	Fixed output;
+	output._number = (this->_number * fixed._number) >> _fraction;
+	return (output);
+}
+
+Fixed Fixed::operator++()
+{
+	this->_number += 1;
+	return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed temp(*this);
+	this->_number += 1;
+	return (temp);
+}
+
+Fixed Fixed::operator--()
+{
+	this->_number -= 1;
+	return (*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed temp(*this);
+	this->_number -= 1;
+	return (temp);
+}
+
+
+Fixed &Fixed::min(Fixed &fx1, Fixed &fx2)
+{
+	if (fx1._number < fx2._number)
+		return (fx1);
+	return (fx2);
+}
+
+const Fixed &Fixed::min(const Fixed &fx1, const Fixed &fx2)
+{
+	if (fx1._number < fx2._number)
+		return (fx1);
+	return (fx2);
+}
+
+Fixed &Fixed::max(Fixed &fx1, Fixed &fx2)
+{
+	if (fx1._number > fx2._number)
+		return (fx1);
+	return (fx2);
+}
+
+const Fixed &Fixed::max(const Fixed &fx1, const Fixed &fx2)
+{
+	if (fx1._number > fx2._number)
+		return (fx1);
+	return (fx2);
+}
