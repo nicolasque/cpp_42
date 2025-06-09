@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 21:01:33 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/05 23:54:35 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/09 23:53:53 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,56 +79,56 @@ std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 	return (os);
 }
 
-bool Fixed::operator>(const Fixed &fixed)
+bool Fixed::operator>(const Fixed &fixed) const
 {
 	return (this->_number > fixed._number);
 }
 
-bool Fixed::operator<(const Fixed &fixed)
+bool Fixed::operator<(const Fixed &fixed) const
 {
 	return (this->_number < fixed._number);
 }
 
-bool Fixed::operator>=(const Fixed &fixed)
+bool Fixed::operator>=(const Fixed &fixed) const
 {
 	return (this->_number >= fixed._number);
 }
 
-bool Fixed::operator<=(const Fixed &fixed)
+bool Fixed::operator<=(const Fixed &fixed) const
 {
 	return (this->_number <= fixed._number);
 }
 
-bool Fixed::operator==(const Fixed &fixed)
+bool Fixed::operator==(const Fixed &fixed) const
 {
 	return (this->_number == fixed._number);
 }
 
-bool Fixed::operator!=(const Fixed &fixed)
+bool Fixed::operator!=(const Fixed &fixed) const
 {
 	return (this->_number != fixed._number);
 }
 
-Fixed Fixed::operator+(const Fixed &fixed)
+Fixed Fixed::operator+(const Fixed &fixed) const
 {
 	Fixed output(this->_number + fixed._number);
 	return (output);
 }
 
-Fixed Fixed::operator-(const Fixed &fixed)
+Fixed Fixed::operator-(const Fixed &fixed) const
 {
 	Fixed output(this->_number - fixed._number);
 	return (output);
 }
 
-Fixed Fixed::operator*(const Fixed &fixed)
+Fixed Fixed::operator*(const Fixed &fixed) const
 {
 	Fixed output;
 	output._number = (this->_number * fixed._number) >> _fraction;
 	return (output);
 }
 
-Fixed Fixed::operator/(const Fixed &fixed)
+Fixed Fixed::operator/(const Fixed &fixed) const
 {
 	Fixed output;
 	output._number = (this->_number * fixed._number) >> _fraction;

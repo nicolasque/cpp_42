@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 23:59:10 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/06 18:18:22 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/09 20:34:39 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ public:
 	Point(const Point &newPoint);
 	~Point();
 	Point &operator=(const Point &oldPoint);
+	const Fixed& getPointX() const;
+	const Fixed& getPointY() const;
 
 };
 
