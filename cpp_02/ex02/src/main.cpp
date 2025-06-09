@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:25:03 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/09 23:47:16 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:17:30 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int main(void)
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max(a, b) << std::endl;
-	return 0;
+	return (0);
 }

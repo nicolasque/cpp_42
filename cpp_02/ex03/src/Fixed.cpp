@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 21:01:33 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/10 00:11:49 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:29:57 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,22 @@ Fixed::Fixed()
 
 Fixed::Fixed(const int input)
 {
-	if (input >= MAX_FLO)
-	{
-		this->_number = 0;
-		return;
-	}
-	this->_number = input << this->_fraction;
+    if (input >= MAX_FLO)
+    {
+        this->_number = 0;
+        return;
+    }
+    this->_number = input << this->_fraction;
 }
 
 Fixed::Fixed(const float input)
 {
-	if (input >= MAX_FLO)
-	{
-		this->_number = 0;
-		return;
-	}
-	this->_number = round(input * (1 << this->_fraction));
+    if (input >= MAX_FLO)
+    {
+        this->_number = 0;
+        return;
+    }
+    this->_number = round(input * (1 << this->_fraction));
 }
 
 Fixed::Fixed(const Fixed &fixed)
@@ -68,8 +68,9 @@ float Fixed::toFloat() const
 	return ((float)this->_number * (pow(2, -this->_fraction)));
 }
 
-int Fixed::toInt() const {
-    return (this->_number >> _fraction);  // Shift right
+int Fixed::toInt() const
+{
+	return (this->_number >> _fraction); // Shift right
 }
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
@@ -110,13 +111,15 @@ bool Fixed::operator!=(const Fixed &fixed) const
 
 Fixed Fixed::operator+(const Fixed &fixed) const
 {
-	Fixed output(this->_number + fixed._number);
+	Fixed output;
+	output._number = this->_number + fixed._number;
 	return (output);
 }
 
 Fixed Fixed::operator-(const Fixed &fixed) const
 {
-	Fixed output(this->_number - fixed._number);
+	Fixed output;
+	output._number = this->_number - fixed._number;
 	return (output);
 }
 
@@ -130,7 +133,7 @@ Fixed Fixed::operator*(const Fixed &fixed) const
 Fixed Fixed::operator/(const Fixed &fixed) const
 {
 	Fixed output;
-	output._number = (this->_number * fixed._number) >> _fraction;
+	output._number = (this->_number << _fraction) / fixed._number;
 	return (output);
 }
 
@@ -159,7 +162,6 @@ Fixed Fixed::operator--(int)
 	this->_number -= 1;
 	return (temp);
 }
-
 
 Fixed &Fixed::min(Fixed &fx1, Fixed &fx2)
 {
