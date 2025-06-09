@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 23:59:44 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/09 23:59:04 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:12:51 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,22 @@
 
 static Fixed ft_calculateArea(Point const a, Point const b, Point const c)
 {
-	Fixed Area;
+	Fixed area;
 
-	Area = a.getPointX() * (b.getPointY() - c.getPointY()) +
+	area = a.getPointX() * (b.getPointY() - c.getPointY()) +
 		   b.getPointX() * (c.getPointY() - a.getPointY()) +
-		   c.getPointY() * (a.getPointY() - b.getPointY());
+		   c.getPointX() * (a.getPointY() - b.getPointY());
 
-	if (Area < Fixed(0))
-		Area *Fixed(-1);
-	return (Area / Fixed(2));
+	if (area < Fixed(0))
+		area = area * Fixed(-1);
+
+	return (area / Fixed(2));
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
 	(void)point;
-	Fixed Area = ft_calculateArea(a, b, c);
-	std::cout << "Area = " << b.getPointX().toFloat();
+	ft_calculateArea(a, b, c);
+	std::cout << "Area = " << ft_calculateArea(a, b, c);
 	return (true);
 }

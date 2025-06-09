@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 21:01:33 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/09 23:53:53 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:11:49 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Fixed::Fixed(const int input)
 		this->_number = 0;
 		return;
 	}
-	this->_number = round(input * pow(2, this->_fraction));
+	this->_number = input << this->_fraction;
 }
 
 Fixed::Fixed(const float input)
@@ -68,9 +68,8 @@ float Fixed::toFloat() const
 	return ((float)this->_number * (pow(2, -this->_fraction)));
 }
 
-int Fixed::toInt() const
-{
-	return (round(this->_number * (pow(2, -this->_fraction))));
+int Fixed::toInt() const {
+    return (this->_number >> _fraction);  // Shift right
 }
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
