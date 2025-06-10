@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 21:01:23 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/09 23:53:08 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/10 15:34:26 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,12 @@ public:
 	Fixed(const int number);
 	Fixed(const float number);
 	Fixed(const Fixed &fixed);
-
 	~Fixed();
+
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 	float toFloat(void) const;
 	int toInt(void) const;
-	
 
 	Fixed &operator=(const Fixed &fixed);
 
