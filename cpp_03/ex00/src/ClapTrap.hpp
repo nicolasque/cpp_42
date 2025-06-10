@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 15:27:34 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/10 19:01:36 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/10 22:16:23 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-#include <string>
 #include <iomanip>
 #include <cctype>
 #include <sstream>
@@ -32,6 +31,7 @@ class ClapTrap
 		int	_hitPoints;
 		int _energyPoints;
 		int _attackDamage;
+		void _printStats() const;
 
 	public:
 		ClapTrap(std::string name);
