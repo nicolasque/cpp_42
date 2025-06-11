@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 21:55:52 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/03 00:46:37 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/11 20:26:49 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,4 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	harlIto.complain(argv[1]);
-
-
 }
