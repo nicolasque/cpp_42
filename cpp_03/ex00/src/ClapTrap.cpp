@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 15:27:25 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/10 22:57:56 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/11 14:57:03 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void ClapTrap::attack(const std::string &target)
 	}
 	else
 		std::cout << this->_name << " not enough energy points or not enough health." << std::endl;
+	std::cout << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -76,6 +77,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	else
 		std::cout << this->_name << " not enough energy points or not enough health." << std::endl;
 	this->_printStats();
+	std::cout << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -90,11 +92,12 @@ void ClapTrap::takeDamage(unsigned int amount)
 	}
 	else
 		std::cout << this->_name << " Is already dead." << std::endl;
-
 	this->_printStats();
+	std::cout << std::endl;
 }
 
 void ClapTrap::_printStats() const
 {
 	std::cout << this->_name << " | Health: " << this->_hitPoints << " | Energy: " << this->_energyPoints << " |" << std::endl;
+	std::cout << std::endl;
 }
