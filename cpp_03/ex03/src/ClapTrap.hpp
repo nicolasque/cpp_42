@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 15:27:34 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/11 18:27:03 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/13 03:24:51 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string _name;
 		int	_hitPoints;
 		int _energyPoints;

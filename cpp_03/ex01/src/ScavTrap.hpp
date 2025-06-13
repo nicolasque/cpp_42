@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 15:02:14 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/11 18:36:55 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/13 03:41:03 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class ScavTrap : public ClapTrap
 		ScavTrap(std::string name);
 		~ScavTrap();
 		void guardGate();
+		void attack(const std::string& target);
 };
 
 #endif
