@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 15:26:54 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/13 00:19:26 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/06/11 15:02:14 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/06/11 18:36:55 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef SCRAVTRAP_HPP
+#define SCRAVTRAP_HPP
 
-int main()
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	std::string calpTrap_name = "Mega Clap";
-	std::string scalpTrap_name = "Mega Scav";
+	private:
 
-	ClapTrap megaClap(calpTrap_name);
-	ScavTrap megaSclav(scalpTrap_name);
+	public:
+		ScavTrap(std::string name);
+		~ScavTrap();
+		void guardGate();
+};
 
-	megaSclav.beRepaired(50);
-	megaSclav.takeDamage(75);
-	megaSclav.guardGate();
-	megaSclav.takeDamage(75);
-	megaSclav.takeDamage(75);
-}
+#endif

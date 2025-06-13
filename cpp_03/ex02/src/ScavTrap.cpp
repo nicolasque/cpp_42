@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 15:02:16 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/11 18:35:20 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/13 00:21:25 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,8 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::guardGate()
 {
-	std::cout << "Now ScavTrap " << this->getName() << "is in gate keep mode" << std::endl;
+	if (this->getEnergyPoints() > 0 && this->getHitPoints() > 0)
+		std::cout << "Now ScavTrap " << this->getName() << "is in gate keep mode" << std::endl;
+	else
+		std::cout << this->getName() << " has no nergy points or live" << std::endl;
 }

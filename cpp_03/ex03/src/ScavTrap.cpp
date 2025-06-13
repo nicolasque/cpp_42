@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 15:26:54 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/13 00:19:26 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/06/11 15:02:16 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/06/11 18:35:20 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-int main()
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
 {
-	std::string calpTrap_name = "Mega Clap";
-	std::string scalpTrap_name = "Mega Scav";
+	std::cout << "ScavTrap has been sumoned " << std::endl;
+}
 
-	ClapTrap megaClap(calpTrap_name);
-	ScavTrap megaSclav(scalpTrap_name);
+ScavTrap::~ScavTrap()
+{
+	std::cout << "ScavTrap has been DESTOYED " << std::endl;
+}
 
-	megaSclav.beRepaired(50);
-	megaSclav.takeDamage(75);
-	megaSclav.guardGate();
-	megaSclav.takeDamage(75);
-	megaSclav.takeDamage(75);
+void ScavTrap::guardGate()
+{
+	std::cout << "Now ScavTrap " << this->getName() << "is in gate keep mode" << std::endl;
 }
