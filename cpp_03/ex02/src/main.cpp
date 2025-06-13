@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 15:26:54 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/13 02:53:33 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/13 02:54:48 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ int main()
 		megaFrag.takeDamage(99);
 		megaFrag.beRepaired(42);
 		megaFrag.highFivesGuys();
+		megaFrag.takeDamage(99);
+		megaFrag.attack("Nicolason");
 	}
 }

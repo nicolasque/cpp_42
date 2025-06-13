@@ -8,7 +8,7 @@ CFLAGS      = -Wall -Wextra -Werror -std=c++98 -Wshadow
 INCLUDES    = -I includes
 
 SRC_DIR     = src
-MAIN_SRCS   = main.cpp ClapTrap.cpp ScavTrap.cpp
+MAIN_SRCS   = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 SRCS = $(addprefix $(SRC_DIR)/, $(MAIN_SRCS))
 
