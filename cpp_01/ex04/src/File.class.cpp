@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:14:37 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/03 00:35:39 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/16 21:55:05 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,14 @@ void File::setContent()
 	char c;
 	this->content = "";
 	while (ReadFile.get(c))
+	{
+		if ((unsigned char)(c) > 127)
+		{
+			std::cout << "Invalid character sert in file. (DOG)" << std::endl;
+			std::exit(1);
+		}
 		this->content += c;
+	}
 }
 
 std::string File::getContent()
