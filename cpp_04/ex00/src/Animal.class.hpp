@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 22:08:01 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/20 00:04:07 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/20 00:25:31 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class Animal
 	Animal(const Animal &animal);
 	Animal &operator=(const Animal &new_animal);
 	~Animal();
+	std::string getType() const;
 	virtual void makeSound() const;
 
 };
