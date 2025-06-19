@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 22:09:58 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/05/29 23:25:32 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/19 18:51:01 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ std::string ft_getline(std::string field_name)
 		}
 		for (size_t i = 0; i < field.length(); i++)
 		{
-            if (static_cast<unsigned char>(field[i]) > 127)
+			if (static_cast<unsigned char>(field[i]) > 127)
 			{
 				std::cout << YELLOW << "Invalid character (DOG)" << RESET << std::endl;
 				field = "";
@@ -49,7 +49,7 @@ bool ft_check_phone_nbr(std::string str)
 	{
 		if (std::isdigit(str[i]) == 0)
 		{
-            std::cout << "\033[31mInvalid phone number (Only accepts numbers)\033[0m" << std::endl;
+			std::cout << "\033[31mInvalid phone number (Only accepts numbers)\033[0m" << std::endl;
 			return (false);
 		}
 	}
