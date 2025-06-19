@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 22:08:04 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/20 00:25:37 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/20 00:35:23 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Animal::Animal() : _type("Default animal")
 {
-	std::cout << "Default ANIMLA constructor has benn called." << std::endl;
+	std::cout << "Default ANIMAL constructor has benn called." << std::endl;
 }
 
 Animal::Animal(std::string type) : _type(type)
