@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:14:37 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/16 21:55:05 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/19 18:12:36 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,10 @@ std::string File::getContent()
 
 size_t File::replace(size_t pos)
 {
-	pos = this->content.find(this->_s1);
+	if (pos == 0)
+		pos = this->content.find(this->_s1);
+	else
+		pos = this->content.find(this->_s1, pos + _s2.length());
 	if (pos == std::string::npos)
 		return (0);
 	this->content.erase(pos, this->_s1.length());
