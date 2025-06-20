@@ -2,7 +2,7 @@
 #                                   Makefile                                   #
 # **************************************************************************** #
 
-NAME        = ex02
+NAME        = ex01
 CC          = c++
 CFLAGS      = -Wall -Wextra -Werror -std=c++98 -Wshadow
 INCLUDES    = -I includes
