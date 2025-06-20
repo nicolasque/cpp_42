@@ -6,11 +6,11 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 22:08:04 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/20 00:35:23 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/20 02:13:33 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.class.hpp"
+#include "includes/Animal.class.hpp"
 
 Animal::Animal() : _type("Default animal")
 {

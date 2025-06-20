@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.class.hpp                                      :+:      :+:    :+:   */
+/*   Brain.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 19:21:10 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/20 00:17:37 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/06/20 02:15:04 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/06/20 02:41:29 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "Animal.class.hpp"
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <cctype>
+#include <sstream>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#define IDEAS_NBR 100
 
-class Cat : public Animal
+class Brain
 {
 	private:
+		std::string _ideas[IDEAS_NBR];
+		static void copyIdeas();
 
 	public:
-		Cat();
-		Cat(const Cat &cat);
-		Cat &operator=(const Cat &cat);
-		~Cat();
-		void makeSound() const;
+		Brain();
+		Brain(std::string idea);
+		Brain(const Brain &other_brain);
+		Brain &operator=(const Brain &other_brain);
+		~Brain();
 };

@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.class.hpp                                 :+:      :+:    :+:   */
+/*   Cat.class.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/20 01:24:36 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/20 01:24:56 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/06/18 19:21:10 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/06/20 02:46:53 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "WrongAnimal.class.hpp"
+#include "Animal.class.hpp"
 
-class WrongCat : public WrongAnimal
+class Cat : public Animal
 {
 	private:
 
 	public:
-		WrongCat();
-		WrongCat(const WrongCat &WrongCat);
-		WrongCat &operator=(const WrongCat &WrongCat);
-		~WrongCat();
+		Cat();
+		Cat(std::string idea);
+		Cat(const Cat &cat);
+		Cat &operator=(const Cat &cat);
+		~Cat();
 		void makeSound() const;
 };
