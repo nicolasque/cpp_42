@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.class.hpp                                   :+:      :+:    :+:   */
+/*   WrongWrongAnimal.class.hpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 22:08:01 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/20 17:43:16 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/06/20 00:34:59 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/06/20 00:36:05 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "Brain.class.hpp"
 
-class Animal
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <cctype>
+#include <sstream>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+
+class WrongAnimal
 {
-protected:
-	std::string _type;
-	Brain *_brain;
+	protected:
+		std::string _type;
 
-public:
-	Animal();
-	Animal(std::string type);
-	Animal(const Animal &animal);
-	Animal &operator=(const Animal &new_animal);
-	virtual ~Animal();
+	public:
+	WrongAnimal();
+	WrongAnimal(std::string type);
+	WrongAnimal(const WrongAnimal &wrongAnimal);
+	WrongAnimal &operator=(const WrongAnimal &new_wrongAnimal);
+	virtual ~WrongAnimal();
 	std::string getType() const;
-	virtual void makeSound() const;
+	void makeSound() const;
+
 };
