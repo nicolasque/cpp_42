@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 19:21:04 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/20 00:28:44 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/20 02:49:14 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Dog : public Animal
 
 	public:
 		Dog();
+		Dog(std::string idea);
 		Dog(const Dog &cat);
 		Dog &operator=(const Dog &cat);
 		~Dog();

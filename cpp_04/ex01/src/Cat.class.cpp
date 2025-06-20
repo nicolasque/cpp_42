@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 19:21:12 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/20 02:48:32 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/20 03:12:02 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ Cat::Cat(std::string idea)
 
 Cat::Cat(const Cat &cat)
 {
-	this->_type = cat._type;
-	this->_brain = cat._brain;
+	Animal::operator=(cat);
 	std::cout << "Cat copy constructor has been called" << std::endl;
 }
 
@@ -37,8 +36,7 @@ Cat &Cat::operator=(const Cat &cat)
 {
 	if (this != &cat)
 	{
-		this->_type = cat._type;
-		this->_brain = cat._brain;
+		Animal::operator=(cat);
 	}
 	return (*this);
 }
