@@ -21,11 +21,13 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
+#include "Brain.class.hpp"
 
 class WrongAnimal
 {
 	protected:
 		std::string _type;
+		Brain *_brain;
 
 	public:
 	WrongAnimal();
@@ -34,6 +36,6 @@ class WrongAnimal
 	WrongAnimal &operator=(const WrongAnimal &new_wrongAnimal);
 	virtual ~WrongAnimal();
 	std::string getType() const;
-	void makeSound() const;
+	virtual void makeSound() const = 0;
 
 };
