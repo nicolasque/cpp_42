@@ -1,33 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AMateria.class.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 19:20:59 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/22 20:29:26 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/06/22 22:53:00 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/06/22 23:25:22 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/AMateria.class.hpp"
 
-int main()
+AMateria::AMateria() : _type("Default materia")
 {
-	IMateriaSource *src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	ICharacter *me = new Character("me");
-	AMateria *tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	ICharacter *bob = new Character("bob");
-	me->use(0, *bob);
-	me->use(1, *bob);
-	delete bob;
-	delete me;
-	delete src;
-	return 0;
+}
+
+AMateria::AMateria(std::string const &type) : _type(type)
+{
+
+}
+
+AMateria::AMateria(const AMateria &new_materia) : _type(new_materia._type)
+{
+
+}
+
+AMateria::~AMateria()
+{
+
+}
+
+AMateria &AMateria::operator=(const AMateria &cpy_materia)
+{
+	if (this != &cpy_materia)
+	{
+		this->_type = cpy_materia._type;
+	}
+	return (*this);
+}
+
+const std::string &AMateria::getType() const
+{
+	return (this->_type);
 }
