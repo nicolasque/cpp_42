@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 22:53:00 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/22 23:25:22 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/06/23 00:02:25 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ AMateria::AMateria(std::string const &type) : _type(type)
 
 }
 
-AMateria::AMateria(const AMateria &new_materia) : _type(new_materia._type)
+AMateria::AMateria(const AMateria &new_materia)
 {
-
+	*this = new_materia;
 }
 
 AMateria::~AMateria()

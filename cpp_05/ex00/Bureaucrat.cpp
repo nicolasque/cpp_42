@@ -1,30 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.class.hpp                            :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/22 23:12:40 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/22 23:55:13 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/07/17 00:57:15 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/07/17 00:57:16 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include "IMateriaSource.class.hpp"
-
-#define MAX_MATERIA 4
-
-class MateriaSource : public IMateriaSource
-{
-private:
-	AMateria*_materia[MAX_MATERIA];
-	int _materias_count;
-
-public:
-	MateriaSource();
-	MateriaSource(const MateriaSource &cpy_materia);
-	~MateriaSource();
-	MateriaSource &operator=(const MateriaSource &cpy_materia);
-
-};

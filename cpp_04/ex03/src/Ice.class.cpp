@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.class.hpp                            :+:      :+:    :+:   */
+/*   Ice.class.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/22 23:12:40 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/22 23:55:13 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/06/23 00:04:29 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/06/23 00:07:16 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include "IMateriaSource.class.hpp"
+#include "includes/Ice.class.hpp"
 
-#define MAX_MATERIA 4
+Ice::Ice() : AMateria("ice") {}
 
-class MateriaSource : public IMateriaSource
-{
-private:
-	AMateria*_materia[MAX_MATERIA];
-	int _materias_count;
+Ice::Ice(const Ice &ice) {*this = ice;}
 
-public:
-	MateriaSource();
-	MateriaSource(const MateriaSource &cpy_materia);
-	~MateriaSource();
-	MateriaSource &operator=(const MateriaSource &cpy_materia);
-
-};
+Ice Ice::&operator=()
