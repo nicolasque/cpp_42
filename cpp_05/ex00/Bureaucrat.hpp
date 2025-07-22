@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 00:57:12 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/17 01:09:25 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/21 19:39:47 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Bureaucrat {
     private:
         std::string _name;
         int _range;
+		class GradeTooHighException : public std::exception {};
 
     public:
         Bureaucrat();
@@ -31,4 +32,12 @@ class Bureaucrat {
         Bureaucrat &operator=(const Bureaucrat& bureaucrat);
 
         std::string& operator<<(std::ostream& os);
+};
+
+
+class GradeTooHighException : public std::exception {
+	public:
+			const char* what() const noexcept override {
+				return ""
+			}
 };
