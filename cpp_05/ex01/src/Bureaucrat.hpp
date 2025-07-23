@@ -1,0 +1,65 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/17 00:57:12 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/07/22 17:36:15 by nquecedo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <cctype>
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <sstream>
+#include <string>
+
+#pragma once
+
+#define HIGHEST_GRADE 1
+#define LOWEST_GRADE 150
+
+class Bureaucrat
+{
+private:
+    const std::string _name;
+    int _grade;
+
+    public:
+    Bureaucrat();
+    Bureaucrat(std::string name, int range);
+    Bureaucrat(const Bureaucrat &bureaucrat);
+    ~Bureaucrat();
+    Bureaucrat &operator=(const Bureaucrat &bureaucrat);
+
+    std::string getName() const;
+    int getGrade() const;
+
+    void incrementGrade();
+    void decreaseGrade();
+
+    class GradeTooHighException : public std::exception
+    {
+    public:
+        const char *what() const throw()
+        {
+            return ("Grade is too high! (maximun is 1)");
+        }
+    };
+
+    class GradeTooLowException : public std::exception
+    {
+    public:
+        const char *what() const throw()
+        {
+            return ("Grade is too low! (minimum is 150)");
+        }
+    };
+};
+
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
+
+
