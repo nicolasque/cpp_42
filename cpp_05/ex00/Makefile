@@ -4,11 +4,11 @@
 
 NAME        = ex00
 CC          = c++
-CFLAGS      = -Wall -Wextra -Werror -std=c++98 -Wshadow
+CFLAGS      = -Wall -Wextra -Werror -std=c++98
 INCLUDES    = -I includes
 
 SRC_DIR     = src
-MAIN_SRCS   = main.cpp Animal.class.cpp Cat.class.cpp Dog.class.cpp Brain.class.cpp WrongAnimal.class.cpp
+MAIN_SRCS   = main.cpp Bureaucrat.cpp
 
 SRCS = $(addprefix $(SRC_DIR)/, $(MAIN_SRCS))
 

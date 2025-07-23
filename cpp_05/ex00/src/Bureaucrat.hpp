@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 00:57:12 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/22 15:53:41 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/22 17:36:15 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,39 +25,41 @@
 class Bureaucrat
 {
 private:
-    std::string _name;
-    int _range;
-    class GradeTooHighException;
-    class GradeTooLowException;
+    const std::string _name;
+    int _grade;
 
-public:
+    public:
     Bureaucrat();
     Bureaucrat(std::string name, int range);
     Bureaucrat(const Bureaucrat &bureaucrat);
+    ~Bureaucrat();
     Bureaucrat &operator=(const Bureaucrat &bureaucrat);
 
-    std::string getName();
-    int getRange();
+    std::string getName() const;
+    int getGrade() const;
+
     void incrementGrade();
-    void decreaseRange();
+    void decreaseGrade();
+
+    class GradeTooHighException : public std::exception
+    {
+    public:
+        const char *what() const throw()
+        {
+            return ("Grade is too high! (maximun is 1)");
+        }
+    };
+
+    class GradeTooLowException : public std::exception
+    {
+    public:
+        const char *what() const throw()
+        {
+            return ("Grade is too low! (minimum is 150)");
+        }
+    };
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
 
-class GradeTooHighException : public std::exception
-{
-public:
-    const char *what() const noexcept override
-    {
-        return ("Grade is too high! (maximun is 1)");
-    }
-};
 
-class GradeTooLowException : public std::exception
-{
-public:
-    const char *what() const noexcept override
-    {
-        return ("Grade is too low! (minimum is 150)");
-    }
-};
