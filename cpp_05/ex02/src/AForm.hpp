@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 16:37:05 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 21:11:39 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:35:48 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ private:
     int getExecuteGrade() const;
     
     void beSigned(const Bureaucrat &bureaucrat);
-    void checkForExecution(const Bureaucrat &bureaucrat);
-    virtual void execute(const Bureaucrat &bureaucrat) = 0;
+    void checkForExecution(const Bureaucrat &bureaucrat) const;
+    virtual bool execute(const Bureaucrat &bureaucrat) const = 0;
 
     class GradeTooHighException : public std::exception
     {

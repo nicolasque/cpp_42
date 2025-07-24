@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 00:57:15 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 21:31:27 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:39:20 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,14 @@ void Bureaucrat::signForm(AForm &form)
     }
         std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << "bureaucrat grade was too low." << std::endl;
         return ;
+}
+
+void Bureaucrat::executeForm(AForm &form)
+{
+    if (form.execute(*this))
+    {
+        std::cout << this->getName() << " executed " << form.getName() << std::endl;
+        return ;
+    }
+    std::cout << this->getName() << " coundn't execute " << form.getName() << std::endl;
 }

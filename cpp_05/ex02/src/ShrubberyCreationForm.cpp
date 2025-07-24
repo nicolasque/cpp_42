@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 17:40:59 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 21:29:05 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:36:07 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 std::string ShrubberyCreationForm::getTarget() const { return (this->_target); }
 
-void ShrubberyCreationForm::execute(const Bureaucrat &bureaucrat)
+bool ShrubberyCreationForm::execute(const Bureaucrat &bureaucrat) const
 {
     this->checkForExecution(bureaucrat);
 
@@ -43,7 +43,8 @@ void ShrubberyCreationForm::execute(const Bureaucrat &bureaucrat)
     if (!outfile)
     {
         std::cout << "Error writing to file" << std::endl;
-        return ;
+        return (false);
     }
     outfile << tree;
+    return (true);
 }

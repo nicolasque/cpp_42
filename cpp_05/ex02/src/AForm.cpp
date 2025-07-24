@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 16:37:00 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 18:31:29 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:35:27 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void AForm::beSigned(const Bureaucrat &bureacrat)
     this->_isSigned = true;
 }
 
-void AForm::checkForExecution(const Bureaucrat &bureaucrat)
+void AForm::checkForExecution(const Bureaucrat &bureaucrat) const
 {
     if (!this->getIsSigned())
         throw FormNotSignedException();

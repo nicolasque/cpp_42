@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 17:28:19 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 17:51:13 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:35:57 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ public:
     ~ShrubberyCreationForm();
 
     std::string getTarget() const;
-    virtual void execute(const Bureaucrat &bureaucrat);
+    virtual bool execute(const Bureaucrat &bureaucrat) const;
 };

@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 00:57:12 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 21:31:20 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:37:00 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ private:
     void decreaseGrade();
 
     void signForm(AForm &form);
+    void executeForm(AForm &form);
 
     class GradeTooHighException : public std::exception
     {
