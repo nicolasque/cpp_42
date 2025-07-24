@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 00:04:29 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/06/23 00:07:16 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:14:39 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,4 @@ Ice::Ice() : AMateria("ice") {}
 
 Ice::Ice(const Ice &ice) {*this = ice;}
 
-Ice Ice::&operator=()
+// Ice Ice::&operator=()

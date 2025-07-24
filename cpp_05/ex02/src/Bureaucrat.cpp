@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 00:57:15 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 14:18:41 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:31:27 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureacrat)
     return (os);
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
     if (form.getSingGrade() >= this->getGrade())
     {
