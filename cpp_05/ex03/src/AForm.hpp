@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 16:37:05 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 21:35:48 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 23:14:49 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ private:
     AForm();
     AForm(std::string name, int gradeBeSigned, int gradeBeExecuted);
     AForm(const AForm &form);
-    ~AForm();
+    virtual ~AForm();
     AForm &operator=(const AForm &form);
     
     std::string getName() const;

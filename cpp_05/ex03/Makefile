@@ -2,13 +2,13 @@
 #                                   Makefile                                   #
 # **************************************************************************** #
 
-NAME        = ex02
+NAME        = ex03
 CC          = c++
 CFLAGS      = -Wall -Wextra -Werror -std=c++98
 INCLUDES    = -I includes
 
 SRC_DIR     = src
-MAIN_SRCS   = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+MAIN_SRCS   = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
 SRCS = $(addprefix $(SRC_DIR)/, $(MAIN_SRCS))
 

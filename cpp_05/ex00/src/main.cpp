@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 00:56:21 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/23 11:15:33 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 23:12:44 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,7 @@ int main(void)
             std::cout << nico;
         }
     }
-    catch (const Bureaucrat::GradeTooHighException &e)
-    {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
-    }
-    catch (const Bureaucrat::GradeTooLowException &e)
+    catch (const std::exception &e)
     {
         std::cerr << "Exception caught: " << e.what() << std::endl;
     }

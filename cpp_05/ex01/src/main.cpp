@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 00:56:21 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 14:25:45 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 23:12:58 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,7 @@ int main(void)
         std::cout << taxException << std::endl;
         std::cout << q1Tax << std::endl;
     }
-    catch (const Bureaucrat::GradeTooHighException &e)
-    {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
-    }
-    catch (const Bureaucrat::GradeTooLowException &e)
-    {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
-    }
-    catch (const Form::GradeTooHighException &e)
-    {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
-    }
-    catch (const Form::GradeTooLowException &e)
+    catch (const std::exception &e)
     {
         std::cerr << "Exception caught: " << e.what() << std::endl;
     }

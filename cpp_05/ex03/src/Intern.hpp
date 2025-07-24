@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   includes.hpp                                       :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 03:51:05 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 22:38:56 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/07/24 22:38:27 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/07/24 23:12:01 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <cctype>
-#include <fstream>
-#include <iomanip>
-#include <iostream>
-#include <sstream>
-#include <string>
-#include <cstdlib>
-#include <ctime>
-#include <unistd.h>
-class AForm;
-class Bureaucrat;
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "Intern.hpp"
+#include "includes.hpp"
 
+class Intern
+{
+private:
+public:
+    Intern();
+    ~Intern();
+    Intern(const Intern &intern);
+    Intern &operator=(const Intern &intern);
+
+    AForm *makeForm(std::string formName, std::string target);
+};
