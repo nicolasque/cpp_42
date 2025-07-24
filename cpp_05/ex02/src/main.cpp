@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 00:56:21 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 21:32:01 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 22:11:06 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@ int main(void)
 {
     try
     {
-        Bureaucrat IRSagent("Mc douglas", 10);
+        Bureaucrat IRSagent("Mc douglas", 5);
         Bureaucrat averageAciendaAgent("Jose migel do santos", 100);
         ShrubberyCreationForm executableTry("try");
         IRSagent.signForm(executableTry);
-        executableTry.execute(IRSagent);
+        IRSagent.executeForm(executableTry);
 
+        RobotomyRequestForm parceRobotomi("Parce");
+        IRSagent.signForm(parceRobotomi);
+        IRSagent.executeForm(parceRobotomi);
     }
     catch (const Bureaucrat::GradeTooHighException &e)
     {
