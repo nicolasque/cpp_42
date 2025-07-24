@@ -6,12 +6,14 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 11:19:58 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 03:53:39 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 14:11:40 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes.hpp"
 #pragma once
+
+// class Bureaucrat;
 
 class Form
 {
