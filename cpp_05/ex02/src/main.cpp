@@ -6,25 +6,40 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 00:56:21 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/23 11:15:33 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 14:25:45 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "includes.hpp"
 
-
-//ALL GOOD EXECUTION
+// ALL GOOD EXECUTION
 int main(void)
 {
     try
     {
-        Bureaucrat nico("nico", 100);
-        std::cout << nico;
-        for (int i = 0; i < 20; i++)
-        {
-            nico.incrementGrade();
-            std::cout << nico;
-        }
+        Bureaucrat IRSagent("Mc douglas", 10);
+        Bureaucrat averageAciendaAgent("Jose migel do santos", 100);
+
+        Form taxException("Exclusive tax exception", 12, 5);
+        Form q1Tax("Q1 tax", 101, 55);
+
+        std::cout << IRSagent << std::endl;
+        std::cout << averageAciendaAgent << std::endl;
+        std::cout << std::endl;
+
+        std::cout << taxException << std::endl;
+        std::cout << q1Tax << std::endl;
+
+        std::cout << "===============================================" << std::endl;
+
+        averageAciendaAgent.signForm(taxException);
+        IRSagent.signForm(taxException);
+        averageAciendaAgent.signForm(q1Tax);
+
+        std::cout << "===============================================" << std::endl;
+
+        std::cout << taxException << std::endl;
+        std::cout << q1Tax << std::endl;
     }
     catch (const Bureaucrat::GradeTooHighException &e)
     {
@@ -34,103 +49,67 @@ int main(void)
     {
         std::cerr << "Exception caught: " << e.what() << std::endl;
     }
+    catch (const Form::GradeTooHighException &e)
+    {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
+    }
+    catch (const Form::GradeTooLowException &e)
+    {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
+    }
 
     return (0);
 }
 
 
-// //GRADE TO HI
+// ALL BAD EXECUTION
 // int main(void)
 // {
 //     try
 //     {
-//         Bureaucrat nico("nico", 20);
-//         std::cout << nico;
-//         for (int i = 0; i < 33; i++)
-//         {
-//             nico.incrementGrade();
-//             std::cout << nico;
-//         }
-//     }
-//     catch (const Bureaucrat::GradeTooHighException &e)
-//     {
-//         std::cerr << "Exception caught: " << e.what() << std::endl;
-//     }
-//     catch (const Bureaucrat::GradeTooLowException &e)
-//     {
-//         std::cerr << "Exception caught: " << e.what() << std::endl;
-//     }
-//     return (0);
-// }
+//         Bureaucrat IRSagent("Mc douglas", 0);
+//         Bureaucrat averageAciendaAgent("Jose migel do santos", 190);
 
-//GRADE TO LOW
-// int main(void)
-// {
-//     try
-//     {
-//         Bureaucrat nico("nico", 120);
-//         std::cout << nico;
-//         for (int i = 0; i < 33; i++)
-//         {
-//             nico.decreaseGrade();
-//             std::cout << nico;
-//         }
-//     }
-//     catch (const Bureaucrat::GradeTooHighException &e)
-//     {
-//         std::cerr << "Exception caught: " << e.what() << std::endl;
-//     }
-//     catch (const Bureaucrat::GradeTooLowException &e)
-//     {
-//         std::cerr << "Exception caught: " << e.what() << std::endl;
-//     }
-//     return (0);
-// }
+//         std::cout << IRSagent << std::endl;
+//         std::cout << averageAciendaAgent << std::endl;
+//         std::cout << std::endl;
 
-// //GRADE INSTANCIATE TO HI
-// int main(void)
-// {
-//     try
-//     {
-//         Bureaucrat nico("nico", 0);
-//         std::cout << nico;
-//         for (int i = 0; i < 33; i++)
-//         {
-//             nico.incrementGrade();
-//             std::cout << nico;
-//         }
-//     }
-//     catch (const Bureaucrat::GradeTooHighException &e)
-//     {
-//         std::cerr << "Exception caught: " << e.what() << std::endl;
-//     }
-//     catch (const Bureaucrat::GradeTooLowException &e)
-//     {
-//         std::cerr << "Exception caught: " << e.what() << std::endl;
-//     }
-//     return (0);
-// }
+//         Form taxException("Exclusive tax exception", 1, 0);
+//         Form q1Tax("Q1 tax", 9, 155);
 
-// //GRADE INSTANCIATE TO LOW
-// int main(void)
-// {
-//     try
-//     {
-//         // // Bureaucrat nico2("nico2", 149);
-//         // // std::cout << nico2;
-//         Bureaucrat nico("nico", 151);
-//         std::cout << nico;
-//         for (int i = 0; i < 33; i++)
-//         {
-//             nico.decreaseGrade();
-//             std::cout << nico;
-//         }
+
+//         std::cout << taxException << std::endl;
+//         std::cout << q1Tax << std::endl;
+
+//         std::cout << "===============================================" << std::endl;
+
+//         //No exceptions here
+//         averageAciendaAgent.signForm(taxException);
+//         IRSagent.signForm(taxException);
+//         averageAciendaAgent.signForm(q1Tax);
+
+//         std::cout << "===============================================" << std::endl;
+
+//         std::cout << taxException << std::endl;
+//         std::cout << q1Tax << std::endl;
+
+//         std::cout << "===============================================" << std::endl;
+//         // Form sign with low grade bureaucrat exception
+//         taxException.beSigned(averageAciendaAgent);
 //     }
 //     catch (const Bureaucrat::GradeTooHighException &e)
 //     {
 //         std::cerr << "Exception caught: " << e.what() << std::endl;
 //     }
 //     catch (const Bureaucrat::GradeTooLowException &e)
+//     {
+//         std::cerr << "Exception caught: " << e.what() << std::endl;
+//     }
+//     catch (const Form::GradeTooHighException &e)
+//     {
+//         std::cerr << "Exception caught: " << e.what() << std::endl;
+//     }
+//     catch (const Form::GradeTooLowException &e)
 //     {
 //         std::cerr << "Exception caught: " << e.what() << std::endl;
 //     }

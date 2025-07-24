@@ -5,12 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 04:02:14 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 04:02:20 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/07/24 16:37:00 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/07/24 16:37:25 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
+
+#include "includes.hpp"
 
 AForm::AForm() : _name("Default form"), _isSigned(false), _gradeBeSigned(150), _gradeBeExecuted(150)
 {
@@ -63,9 +64,9 @@ int AForm::getExecuteGrade() const
     return (this->_gradeBeExecuted);
 }
 
-std::ostream &operator<<(std::ostream &os, const AForm form)
+std::ostream &operator<<(std::ostream &os, const AForm &form)
 {
-    os << form.getName() << ", form signed state: " << form.getIsSigned() << " , sign grade: " << form.getSingGrade() << "" " , execute grade: " << form.getExecuteGrade() << ".";
+    os << form.getName() << ", form signed state: " << (form.getIsSigned() ? "Yes" : "No") << " , sign grade: " << form.getSingGrade() << "" " , execute grade: " << form.getExecuteGrade() << ".";
     return (os);
 }
 
@@ -73,4 +74,5 @@ void AForm::beSigned(const Bureaucrat &bureacrat)
 {
     if (bureacrat.getGrade() > this->_gradeBeSigned)
         throw GradeTooLowException();
+    this->_isSigned = true;
 }

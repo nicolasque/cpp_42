@@ -6,11 +6,11 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 00:57:15 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 03:59:06 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 14:18:41 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "includes.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Default Bureaucrat"), _grade(LOWEST_GRADE)
 {
@@ -68,13 +68,13 @@ this->_grade ++;
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureacrat)
 {
-    os << bureacrat.getName() << ", bureaucrat grade " << bureacrat.getGrade() << "." << std::endl;
+    os << bureacrat.getName() << ", bureaucrat grade " << bureacrat.getGrade() << ".";
     return (os);
 }
 
 void Bureaucrat::signForm(Form &form)
 {
-    if (form.getIsSigned() > this->getGrade())
+    if (form.getSingGrade() >= this->getGrade())
     {
         std::cout << this->getName() << " signed " << form.getName() << "." << std::endl;
         form.beSigned(*this);
@@ -82,12 +82,9 @@ void Bureaucrat::signForm(Form &form)
     }
     if (form.getIsSigned())
     {
-        std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << "it was already signed" << std::endl;
+        std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << "it was already signed." << std::endl;
         return ;
     }
-    if (form.getSingGrade() < this->getGrade())
-    {
-        std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << "bureaucrat grade was too low" << std::endl;
+        std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << "bureaucrat grade was too low." << std::endl;
         return ;
-    }
 }

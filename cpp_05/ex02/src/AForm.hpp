@@ -5,14 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 04:02:27 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 04:04:24 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/07/24 16:37:05 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/07/24 17:27:08 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "includes.hpp"
 #pragma once
+
+// class Bureaucrat;
 
 class AForm
 {
@@ -34,7 +36,8 @@ private:
     int getSingGrade() const;
     int getExecuteGrade() const;
 
-    virtual void beSigned(const Bureaucrat &bureaucrat) = 0;
+    void beSigned(const Bureaucrat &bureaucrat);
+    virtual void execute(const Bureaucrat &bureaucrat) = 0;
 
     class GradeTooHighException : public std::exception
     {

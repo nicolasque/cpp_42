@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 00:57:12 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/24 03:53:27 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/24 13:58:29 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 #define HIGHEST_GRADE 1
 #define LOWEST_GRADE 150
-
-class Form;
 
 class Bureaucrat
 {
