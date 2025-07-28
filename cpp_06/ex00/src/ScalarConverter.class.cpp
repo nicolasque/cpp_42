@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 20:47:21 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/28 21:18:51 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/28 22:23:39 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 static int detectPseudoLiterals(std::string input)
 {
-    if (input.compare("nan") || input.compare("nanf"))
+    if (!input.compare("nan") || !input.compare("nanf"))
     {
         std::cout << "char: imposible \n"
         << "int: imposible \n"
@@ -25,7 +25,7 @@ static int detectPseudoLiterals(std::string input)
         << "double: nan" << std::endl;
         return (PSEUDO_LITERAL);
     }
-    else if (input.compare("-inff") || input.compare("-inf"))
+    else if (!input.compare("-inff") || !input.compare("-inf"))
     {
         std::cout << "char: imposible \n"
         << "int: imposible \n"
@@ -33,7 +33,7 @@ static int detectPseudoLiterals(std::string input)
         << "double: -inf" << std::endl;
         return (PSEUDO_LITERAL);
     }
-    else if (input.compare("+inff") || input.compare("+inf") || input.compare("inf")|| input.compare("inff"))
+    else if (!input.compare("+inff") || !input.compare("+inf") || !input.compare("inf")|| !input.compare("inff"))
     {
         std::cout << "char: imposible \n"
         << "int: imposible \n"
@@ -43,15 +43,23 @@ static int detectPseudoLiterals(std::string input)
     }
     if (input.length() > 1)
     {
-        std::cout << "Invalid input."  << std::endl;
-        return (BAD_ARGUMENT);
+        for (size_t i = 0; i < input.length() ; i++)
+        {
+            if ((input[0] == '-' || input[0] == '+') && i == 0)
+                i++;
+            if (!isdigit(input[i]))
+                return (BAD_ARGUMENT);
+        }
     }
     return (0);
 }
 
-void ScalarConverter::convert(std::string input) const
+void ScalarConverter::convert(std::string input)
 {
-    if (detectPseudoLiterals(input));
+    if (detectPseudoLiterals(input))
+    {
+        std::cout << "Invalid input."  << std::endl;
         return;
+    }
     std::cout << "de momento bien" << std::endl;
 }
