@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 20:47:21 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/30 02:55:25 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/30 01:46:08 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,51 +17,61 @@
 
 static int detectPseudoLiterals(std::string input)
 {
-    if (!input.compare("nan") || !input.compare("nanf"))
-    {
-        std::cout << "char: imposible \n"
-        << "int: imposible \n"
-        << "float: nanf \n"
-        << "double: nan" << std::endl;
-        return (PSEUDO_LITERAL);
-    }
-    else if (!input.compare("-inff") || !input.compare("-inf"))
-    {
-        std::cout << "char: imposible \n"
-        << "int: imposible \n"
-        << "float: -inff \n"
-        << "double: -inf" << std::endl;
-        return (PSEUDO_LITERAL);
-    }
-    else if (!input.compare("+inff") || !input.compare("+inf") || !input.compare("inf")|| !input.compare("inff"))
-    {
-        std::cout << "char: imposible \n"
-        << "int: imposible \n"
-        << "float: inff \n"
-        << "double: inf" << std::endl;
-        return (PSEUDO_LITERAL);
-    }
-    if (input.length() > 1)
-    {
-        for (size_t i = 0; i < input.length() ; i++)
-        {
-            if ((input[0] == '-' || input[0] == '+') && i == 0)
-                i++;
-            if (!isdigit(input[i]))
-                return (BAD_ARGUMENT);
-        }
-    }
-    return (0);
+	if (!input.compare("nan") || !input.compare("nanf"))
+	{
+		std::cout << "char: imposible \n"
+				  << "int: imposible \n"
+				  << "float: nanf \n"
+				  << "double: nan" << std::endl;
+		return (PSEUDO_LITERAL);
+	}
+	else if (!input.compare("-inff") || !input.compare("-inf"))
+	{
+		std::cout << "char: imposible \n"
+				  << "int: imposible \n"
+				  << "float: -inff \n"
+				  << "double: -inf" << std::endl;
+		return (PSEUDO_LITERAL);
+	}
+	else if (!input.compare("+inff") || !input.compare("+inf") || !input.compare("inf") || !input.compare("inff"))
+	{
+		std::cout << "char: imposible \n"
+				  << "int: imposible \n"
+				  << "float: inff \n"
+				  << "double: inf" << std::endl;
+		return (PSEUDO_LITERAL);
+	}
+	if (input.length() > 1)
+	{
+		if (std::count(input.begin(), input.end(), '.') > 1 ||
+			std::count(input.begin(), input.end(), 'f') > 1)
+			return (BAD_ARGUMENT);
+		for (size_t i = 0; i < input.length(); i++)
+		{
+			if (((input[0] == '-' || input[0] == '+') && i == 0) ||
+				input[i] == '.' || input[i] == 'f')
+				i++;
+			if (!isdigit(input[i]))
+				return (BAD_ARGUMENT);
+		}
+	}
+	return (0);
 }
 
 void ScalarConverter::convert(std::string input)
 {
-    double rawBalue;
-    if (detectPseudoLiterals(input))
-    {
-        std::cout << "Invalid input."  << std::endl;
-        return;
-    }
-    rawBalue = 
-    std::cout << "de momento bien" << std::endl;
+	double rawValue;
+	char *endptr;
+
+	rawValue = std::strtod(input.c_str(), &endptr);
+	if (rawValue > std::numeric_limits<double>::max() ||
+		rawValue < std::numeric_limits<double>::min() ||
+		*endptr != '\0'|| detectPseudoLiterals(input))
+	{
+		std::cout << "Invalid input." << std::endl;
+		return;
+	}
+	else
+		std::cout << "de momento bien" << std::endl;
+	std::cout << rawValue << " este es el numero." << std::endl;
 }

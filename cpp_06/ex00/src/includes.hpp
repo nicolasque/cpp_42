@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 20:52:43 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/28 20:53:33 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/30 01:42:11 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <unistd.h>
+#include <cmath>
+#include <limits>
+#include <algorithm>
 #include "ScalarConverter.class.hpp"
