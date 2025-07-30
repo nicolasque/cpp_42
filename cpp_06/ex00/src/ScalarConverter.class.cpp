@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 20:47:21 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/28 22:23:39 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/30 02:55:25 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,12 @@ static int detectPseudoLiterals(std::string input)
 
 void ScalarConverter::convert(std::string input)
 {
+    double rawBalue;
     if (detectPseudoLiterals(input))
     {
         std::cout << "Invalid input."  << std::endl;
         return;
     }
+    rawBalue = 
     std::cout << "de momento bien" << std::endl;
 }
