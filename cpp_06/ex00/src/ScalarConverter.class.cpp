@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 20:47:21 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/30 01:46:08 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/30 02:23:08 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,42 @@ static int detectPseudoLiterals(std::string input)
 	}
 	if (input.length() > 1)
 	{
-		if (std::count(input.begin(), input.end(), '.') > 1 ||
-			std::count(input.begin(), input.end(), 'f') > 1)
-			return (BAD_ARGUMENT);
-		for (size_t i = 0; i < input.length(); i++)
-		{
-			if (((input[0] == '-' || input[0] == '+') && i == 0) ||
-				input[i] == '.' || input[i] == 'f')
-				i++;
-			if (!isdigit(input[i]))
-				return (BAD_ARGUMENT);
-		}
+		// if (std::count(input.begin(), input.end(), '.') > 1 ||
+		// 	std::count(input.begin(), input.end(), 'f') > 1 ||
+		// 	std::count(input.begin(), input.end(), '+') > 1 ||
+		// 	std::count(input.begin(), input.end(), '-') > 1)
+		// 	return (BAD_ARGUMENT);
+		// for (size_t i = 0; i < input.length(); i++)
+		// {
+		// 	char c = input[i];
+
+		// 	// Permitir signo solo al principio
+		// 	if ((c == '+' || c == '-') && i != 0)
+		// 		return (BAD_ARGUMENT);
+
+		// 	// Permitir 'f' solo al final
+		// 	else if (c == 'f' && i != input.length() - 1)
+		// 		return (BAD_ARGUMENT);
+
+		// 	// Permitir punto decimal
+		// 	else if (c == '.')
+		// 		continue;
+
+		// 	// Permitir signos al principio
+		// 	else if ((c == '+' || c == '-') && i == 0)
+		// 		continue;
+		// 	else if (c == 'f' && i == input.length() - 1)
+		// 		continue;
+		// 	// Todo lo demás debe ser dígito
+		// 	else if (!isdigit(c))
+		// 		return (BAD_ARGUMENT);
+		// }
+		char* endptr;
+        std::strtod(input.c_str(), &endptr);
+        
+        // Si queda algo después de la conversión (excepto 'f' al final)
+        if (*endptr != '\0' && !(strlen(endptr) == 1 && *endptr == 'f'))
+            return (BAD_ARGUMENT);
 	}
 	return (0);
 }
@@ -66,7 +91,7 @@ void ScalarConverter::convert(std::string input)
 	rawValue = std::strtod(input.c_str(), &endptr);
 	if (rawValue > std::numeric_limits<double>::max() ||
 		rawValue < std::numeric_limits<double>::min() ||
-		*endptr != '\0'|| detectPseudoLiterals(input))
+		detectPseudoLiterals(input))
 	{
 		std::cout << "Invalid input." << std::endl;
 		return;
