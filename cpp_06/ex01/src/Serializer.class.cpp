@@ -1,25 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.class.cpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 23:29:08 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/09/05 16:05:09 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/07/30 18:08:29 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/07/30 18:21:25 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes.hpp"
-
-int main(int argc, char **argv)
-{
-    if (argc != 2)
-    {
-        std::cout << "Error: Bad nunber of arguments." << std::endl;
-        return (1);
-    }
-    std::string input(argv[1]);
-    ScalarConverter::convert(input);
-    return (0);
-}

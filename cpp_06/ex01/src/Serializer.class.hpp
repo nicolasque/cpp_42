@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.class.hpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 23:29:08 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/09/05 16:05:09 by nquecedo         ###   ########.fr       */
+/*   Created: 2025/07/30 18:08:25 by nquecedo          #+#    #+#             */
+/*   Updated: 2025/09/05 16:03:57 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "includes.hpp"
 
-int main(int argc, char **argv)
+struct Data
 {
-    if (argc != 2)
-    {
-        std::cout << "Error: Bad nunber of arguments." << std::endl;
-        return (1);
-    }
-    std::string input(argv[1]);
-    ScalarConverter::convert(input);
-    return (0);
-}
+    int dataInt;
+    char *str;
+};
+
+class Serializer
+{
+private:
+    Serializer();
+    ~Serializer();
+    Serializer(const Serializer &Serializer);
+    Serializer &operator=(const Serializer &Serializer);
+
+public:
+    static uintptr_t serialize(Data* ptr);
+    Data* deserialize(uintptr_t raw);
+};

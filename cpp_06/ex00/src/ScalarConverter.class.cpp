@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 20:47:21 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/30 11:48:30 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/07/30 12:25:00 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,12 @@ static int detectPseudoLiterals(std::string input)
         for (size_t i = 0; i < input.length(); i++)
         {
             char c = input[i];
-
             if ((c == '+' || c == '-') && i != 0)
                 return (BAD_ARGUMENT);
-
             else if (c == 'f' && i != input.length() - 1)
                 return (BAD_ARGUMENT);
-
             else if (c == '.')
                 continue;
-
             else if ((c == '+' || c == '-') && i == 0)
                 continue;
             else if (c == 'f' && i == input.length() - 1)
@@ -68,12 +64,6 @@ static int detectPseudoLiterals(std::string input)
             else if (!isdigit(c))
                 return (BAD_ARGUMENT);
         }
-        // char* endptr;
-        // std::strtod(input.c_str(), &endptr);
-
-        // // Si queda algo después de la conversión (excepto 'f' al final)
-        // if (*endptr != '\0' && !(strlen(endptr) == 1 && *endptr == 'f'))
-        //     return (BAD_ARGUMENT);
     }
     return (0);
 }
