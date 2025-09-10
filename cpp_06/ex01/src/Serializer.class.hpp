@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:08:25 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/09/05 16:03:57 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/09/10 20:23:54 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 struct Data
 {
     int dataInt;
-    char *str;
+    std::string str;
 };
 
 class Serializer
@@ -28,6 +28,6 @@ private:
     Serializer &operator=(const Serializer &Serializer);
 
 public:
-    static uintptr_t serialize(Data* ptr);
-    Data* deserialize(uintptr_t raw);
+    static intptr_t serialize(Data* ptr);
+    static Data* deserialize(intptr_t raw);
 };

@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 20:52:43 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/07/30 18:21:43 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/09/10 20:24:40 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@
 #include <limits>
 #include <algorithm>
 #include <cstring>
+#include <algorithm>
 #include "Serializer.class.hpp"
