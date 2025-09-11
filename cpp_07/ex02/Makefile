@@ -2,13 +2,13 @@
 #                                   Makefile                                   #
 # **************************************************************************** #
 
-NAME        = ex01
+NAME        = ex02
 CC          = c++
 CFLAGS      = -Wall -Wextra -Werror -std=c++98 -g -O0
 INCLUDES    = -I includes
 
 SRC_DIR     = src
-MAIN_SRCS   = main.cpp Serializer.class.cpp
+MAIN_SRCS   = main.cpp
 
 SRCS = $(addprefix $(SRC_DIR)/, $(MAIN_SRCS))
 
