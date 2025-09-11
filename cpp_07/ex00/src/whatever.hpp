@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 17:37:11 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/09/11 18:29:14 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/09/11 19:16:26 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@
 template <class T>
 void swap(T &a, T &b)
 {
-    T *temp = &a;
-    &a = &b;
-    &b = &temp;
+    T temp = a;
+    a = b;
+    b = temp;
 }
 
 template <class T>

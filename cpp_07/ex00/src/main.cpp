@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 21:48:17 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/09/11 17:45:31 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/09/11 19:17:51 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int main()
 
     std::cout << "A: " << a << " B: " << b << std::endl;
     std::cout << "Swap" << std::endl;
+    swap(a,b);
     std::cout << "A: " << a << " B: " << b << std::endl;
 }
