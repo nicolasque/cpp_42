@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 17:37:11 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/11/11 13:25:20 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/11/11 16:28:18 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 #include <algorithm>
 #include <typeinfo>
 #include <vector>
+#include <deque>
+#include <list>
 
 
 // template <class T>
@@ -39,12 +41,12 @@
 // }
 
 template <class T>
-std::vector<int> fill_vector(T &arr, int size)
+T fill_vector(int *arr, int size)
 {
-	std::vector<int> v;
-	for (int i = 0; i < )
+	T v;
+	for (int i = 0; i < size ; i++)
 	{
-		v.push_back(arr[size]);
+		v.push_back(arr[i]);
 	}
 	return v;
 }
