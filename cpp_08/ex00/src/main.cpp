@@ -6,22 +6,17 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 21:48:17 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/09/11 19:17:51 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/11/11 15:34:27 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "whatever.hpp"
+#include "easyfind.hpp"
 
 int main()
 {
-    int a = 5;
-    int b = 2;
+	int array[] = {1, 2, 3, 4 ,5};
+	std::vector<int> v = fill_vector(array, sizeof(array));
 
-    std::cout << "Min: " << min(a,b) << std::endl;
-    std::cout << "Max: " << max(a,b) << std::endl;
-
-    std::cout << "A: " << a << " B: " << b << std::endl;
-    std::cout << "Swap" << std::endl;
-    swap(a,b);
-    std::cout << "A: " << a << " B: " << b << std::endl;
+	std::cout << "Array = " <<(sizeof(array)/(sizeof(int))) << std::endl;
+	std::cout << "Vector= " <<(sizeof(v)/(sizeof(int))) << std::endl;
 }
