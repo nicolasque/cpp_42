@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 17:37:11 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/11/11 16:28:18 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:21:30 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@
 // }
 
 template <class T>
-T fill_vector(int *arr, int size)
+T fill_container(int *arr, int size)
 {
 	T v;
 	for (int i = 0; i < size ; i++)
@@ -50,3 +50,18 @@ T fill_vector(int *arr, int size)
 	}
 	return v;
 }
+
+template <typename T>
+int *easyfind(T &cont, int nbr)
+{
+	(void) nbr;
+	typename Container::iterator it = cont.begin();
+
+	for (; it != cont.end(); it++)
+	{
+		std::cout <<  *it << " ";
+	}
+
+	return it;
+}
+
