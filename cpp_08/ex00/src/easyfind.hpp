@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 17:37:11 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/11/11 17:51:32 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/11/11 18:36:48 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 #include <vector>
 #include <deque>
 #include <list>
+#include <stdexcept>
 
 
 // template <class T>
@@ -51,17 +52,20 @@ T fill_container(int *arr, int size)
 	return v;
 }
 
+
 template <typename T>
-int *easyfind(T &cont, int nbr)
+typename T::iterator easyfind(T &cont, int nbr)
 {
 	(void) nbr;
     typename T::iterator it = cont.begin();
 
 	for (; it != cont.end(); it++)
 	{
-		std::cout <<  *it << " ";
+		// std::cout <<  *it << " ";
+		if (*it == nbr)
+			return it;
 	}
 
-	return 0;
+	throw std::invalid_argument("nbr not in the conntainer");
 }
 
