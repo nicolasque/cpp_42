@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 17:37:11 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/11/11 17:21:30 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:51:32 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ template <typename T>
 int *easyfind(T &cont, int nbr)
 {
 	(void) nbr;
-	typename Container::iterator it = cont.begin();
+    typename T::iterator it = cont.begin();
 
 	for (; it != cont.end(); it++)
 	{
 		std::cout <<  *it << " ";
 	}
 
-	return it;
+	return 0;
 }
 

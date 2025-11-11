@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 21:48:17 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/11/11 17:21:05 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:52:32 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int main()
 	std::deque<int> deq = fill_container<std::deque<int> >(array, (sizeof(array)/(sizeof(int))));
 	std::list<int> list = fill_container<std::list<int> >(array, (sizeof(array)/(sizeof(int))));
 
-	std::cout << "Array = " <<(sizeof(array)/(sizeof(int))) << std::endl;
+	std::cout << "Array = , " <<(sizeof(array)/(sizeof(int))) << std::endl;
 	std::cout << "Vector= " << v.size() << std::endl;
 	std::cout << "deque= " << deq.size() << std::endl;
 	std::cout << "list= " << list.size() << std::endl;
 
-	easyfind(v, 3);
+	easyfind(list, 3);
 
 }
