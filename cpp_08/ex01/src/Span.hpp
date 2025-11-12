@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:00:10 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/11/12 16:48:55 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/11/12 17:22:15 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ class Span {
 		};
 		~Span() {};
 
-		
+		int shortestSpan();
+		int longestSpan();
 };
