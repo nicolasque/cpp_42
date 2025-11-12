@@ -2,9 +2,9 @@
 #                                   Makefile                                   #
 # **************************************************************************** #
 
-NAME        = ex00
+NAME        = ex01
 CC          = c++
-CFLAGS      = -Wall -Wextra -Werror -std=c++98 -g -O0
+CFLAGS      = -Wall -Wextra -Werror -std=c++98
 INCLUDES    = -I includes
 
 SRC_DIR     = src
