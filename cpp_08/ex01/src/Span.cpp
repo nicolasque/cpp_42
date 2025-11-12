@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:00:08 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/11/12 18:27:35 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/11/12 18:33:13 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,17 @@ void Span::addBatch(int *arr, int size)
 		this->addNumber(arr[i]);
 }
 
-int Span::shortestSpan()
+std::vector <int> Span::getVector()
 {
-	
+	return (_v);
 }
+
+int Span::getSize()
+{
+	return (_size);
+}
+
+// int Span::shortestSpan()
+// {
+	
+// }

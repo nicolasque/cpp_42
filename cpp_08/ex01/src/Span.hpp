@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:00:10 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/11/12 18:22:22 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/11/12 18:32:04 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,7 @@ class Span {
 		void addBatch(int *arr, int size);
 		int shortestSpan();
 		int longestSpan();
+
+		std::vector <int> getVector();
+		int getSize();
 };
