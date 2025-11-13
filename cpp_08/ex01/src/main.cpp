@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 21:48:17 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/11/12 18:34:15 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:00:58 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,24 @@
 int main()
 {
 	Span s(5);
-	int arr[5] = {1, 2, 3, 4,5};
-	std::vector <int> vecto;
+	int arr[5] = {5, 4, 3, 2, 1};
+	std::vector <int> vector;
 
 	try {
 		s.addBatch(arr, 5);
 
-		vecto = s.getVector();
+		vector = s.getVector();
 
-		
-		
+		for (unsigned int i = 0; i < vector.size(); i++)
+		{
+			std::cout << vector.at(i) << " ";
+		}
+		std::cout << std::endl;
+
+
 	} catch (const std::invalid_argument& ia)
 	{
 		std::cout << "Exception caugth: "<< ia.what() << std::endl;
 	}
 }
+

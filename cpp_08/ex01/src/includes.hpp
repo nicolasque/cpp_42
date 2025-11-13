@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   includes.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 17:37:11 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/11/11 18:36:48 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:00:00 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ T fill_container(int *arr, int size)
 		v.push_back(arr[i]);
 	}
 	return v;
-}
+};
 
 
 template <typename T>
@@ -67,5 +67,10 @@ typename T::iterator easyfind(T &cont, int nbr)
 	}
 
 	throw std::invalid_argument("nbr not in the conntainer");
-}
+};
 
+template <typename T>
+void printList(T &cont, unsigned int size)
+{
+	
+}

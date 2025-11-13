@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:00:10 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/11/12 18:32:04 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:27:05 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 class Span {
 	private:
-		int _size;
+		unsigned int _size;
 		std::vector <int> _v;
 
 	public:
@@ -39,3 +39,4 @@ class Span {
 		std::vector <int> getVector();
 		int getSize();
 };
+
