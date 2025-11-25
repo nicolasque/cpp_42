@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:00:08 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/11/13 14:28:31 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/11/13 15:05:19 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ std::vector <int> Span::getVector()
 int Span::getSize()
 {
 	return (_size);
+}
+
+int *Span::getArray()
+{
+	
 }
 
 int Span::shortestSpan()
