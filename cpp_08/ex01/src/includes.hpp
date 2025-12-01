@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 17:37:11 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/11/13 14:00:00 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/12/01 14:20:47 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 #include <deque>
 #include <list>
 #include <stdexcept>
+#include <limits>
 
 
 // template <class T>
@@ -69,8 +70,8 @@ typename T::iterator easyfind(T &cont, int nbr)
 	throw std::invalid_argument("nbr not in the conntainer");
 };
 
-template <typename T>
-void printList(T &cont, unsigned int size)
-{
+// template <typename T>
+// void printList(T &cont, unsigned int size)
+// {
 	
-}
+// }

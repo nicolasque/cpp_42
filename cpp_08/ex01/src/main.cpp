@@ -6,7 +6,7 @@
 /*   By: nquecedo <nquecedo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 21:48:17 by nquecedo          #+#    #+#             */
-/*   Updated: 2025/11/13 14:00:58 by nquecedo         ###   ########.fr       */
+/*   Updated: 2025/12/01 14:39:34 by nquecedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
 	Span s(5);
-	int arr[5] = {5, 4, 3, 2, 1};
+	int arr[5] = {33, 1, 87, 121, 122};
 	std::vector <int> vector;
 
 	try {
@@ -28,6 +28,9 @@ int main()
 			std::cout << vector.at(i) << " ";
 		}
 		std::cout << std::endl;
+
+		std::cout  << "Shortest span: " << (s.shortestSpan()) << std::endl;
+		std::cout  << "LOngest span: " << (s.longestSpan()) << std::endl;
 
 
 	} catch (const std::invalid_argument& ia)
